@@ -1,0 +1,23 @@
+#vim
+*.swp
+*.swo
+*.ropeproject
+
+#Latex
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.lof
+*.toc
+
+#Python
+*.pyc
+__pycache__/
+
+#java
+*.class
+
+#Haskell and c
+*.out
+
