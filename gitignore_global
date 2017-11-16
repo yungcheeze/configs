@@ -21,3 +21,9 @@ __pycache__/
 #Haskell and c
 *.out
 
+
+#IntelliJ
+.idea/
+
+#ctags
+tags
