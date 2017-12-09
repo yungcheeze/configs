@@ -31,7 +31,7 @@ def writeConfiguration(lines):
     f.close()
 
 
-def parseArguments(arguments):
+def parseArguments(lines):
     nextIsInclude = False
     nextIsDefine = False
     nextIsIncludeFile = False
@@ -40,6 +40,8 @@ def parseArguments(arguments):
     defines = []
     include_file = []
     options = []
+
+    arguments = [arg for line in lines for arg in line.split()]
 
     for arg in arguments:
         if nextIsInclude:
@@ -83,14 +85,7 @@ def mergeLists(base, new):
 
 
 configuration = readConfiguration()
-args = parseArguments(sys.argv)
+lines = open(sys.argv[1], "r").readlines()
+args = parseArguments(lines)
 result = mergeLists(configuration, args)
 writeConfiguration(map(lambda x: x + "\n", result))
-
-import subprocess
-proc = subprocess.Popen(sys.argv[1:])
-ret = proc.wait()
-
-if ret is None:
-    sys.exit(1)
-    sys.exit(ret)
