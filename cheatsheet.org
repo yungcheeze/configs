@@ -1,0 +1,12 @@
+* Default Applications
+change ~/.config/mimeapps.list
+
+* Mounting
+udevil umount /media/device
+* Changes
+** Possible Flickering Fix
+https://bbs.archlinux.org/viewtopic.php?pid=1030190
+disable i915 rc6 in /etc/modprobe.d/modprobe.conf
+add i915 module and modprobe.conf file to /etc/mkinitcpio.conf
+run sudo mkinitcpio -p linux
+NOTE: may reduce battery life
