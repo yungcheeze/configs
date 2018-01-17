@@ -232,7 +232,7 @@ bar {
 
 #apps
 bindsym $mod+c exec "chromium"
-bindsym $mod+e exec "emacsclient -c -a emacs"
+bindsym $mod+e exec "/home/yungcheeze/bin/start_emacs"
 bindsym $mod+s exec "blockify --log=/home/yungcheeze/.logs/blockify.log"
 bindsym Control_L+Alt_L+Delete exec "systemctl poweroff"
 
