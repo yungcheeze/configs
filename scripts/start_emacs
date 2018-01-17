@@ -1,0 +1,6 @@
+emacsclient -c
+if test  "z$PIPESTATUS" != "z0"
+then
+    emacs --daemon
+    emacsclient  -c
+fi
