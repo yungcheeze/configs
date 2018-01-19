@@ -247,8 +247,8 @@ exec xbindkeys -p
 exec "emacs --daemon"
 exec "redshift"
 exec "dropbox"
+exec "megasync"
 exec "workrave"
-exec --no-startup-id "devmon --no-gui"
-
+exec --no-startup-id "devmon --no-gui" # auto-mount external devices
+exec "feh --bg-scale /home/yungcheeze/Pictures/wallpapers/survivor_tree-wallpaper-trimmed.jpg" # set background
 exec compton -f
-exec "feh --bg-scale /home/yungcheeze/Pictures/wallpapers/survivor_tree-wallpaper-trimmed.jpg"
