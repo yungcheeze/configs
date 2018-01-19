@@ -1,0 +1,87 @@
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 0.1.3
+#
+# If you edit this, do not forget to uncomment any lines that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h 
+# The XK_ is not needed. 
+#
+# List of modifier (on my keyboard): 
+#   Control, Shift, Mod1 (Alt), Mod2 (NumLock), 
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll). 
+#
+# Another way to specifie a key is to use 'xev' and set the 
+# keycode with c:nnn or the modifier with m:nnn where nnn is 
+# the keycode or the state returned by xev 
+#
+# This file is created by xbindkey_config 
+# The structure is : 
+# # Remark 
+# "command" 
+# m:xxx + c:xxx 
+# Shift+... 
+
+
+
+
+#keystate_numlock = enable
+#keystate_scrolllock = enable
+#keystate_capslock = enable
+
+
+
+# Increase volume
+"pamixer --increase 1"
+   XF86AudioRaiseVolume
+
+# Decrease volume
+"pamixer --decrease 1"
+   XF86AudioLowerVolume
+
+# decrease brightness
+"xbacklight -dec 5"
+   XF86MonBrightnessDown
+
+# increase brightness
+"xbacklight -inc 5"
+   XF86MonBrightnessUp
+
+#toggle mute
+"pamixer --toggle-mute"
+    m:0x0 + c:121
+    XF86AudioMute 
+
+# PrintScreen to Image
+"escrotum ~/Pictures/Screenshots/SS_%Y-%m-%d_%H:%M:%S.png"
+   Print
+
+# PrintSelection to Image
+"escrotum -s ~/Pictures/ScreenClips/SC_%Y-%m-%d_%H:%M:%S.png"
+   Shift+Print
+
+# PrintScreen To Clipboard
+"escrotum --clipboard"
+    Control+Print
+
+# PrintSelection to Image
+"escrotum -s --clipboard"
+   Control+Shift+Print
+
+# Play-Pause media
+"playerctl play-pause"
+    XF86AudioPlay
+
+# Next-Track media
+"playerctl next"
+    XF86AudioNext
+
+# Prev-Track media
+"playerctl previous"
+    XF86AudioPrev
+#
+# End of xbindkeys configuration
