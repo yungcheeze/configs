@@ -10,3 +10,26 @@ disable i915 rc6 in /etc/modprobe.d/modprobe.conf
 add i915 module and modprobe.conf file to /etc/mkinitcpio.conf
 run sudo mkinitcpio -p linux
 NOTE: may reduce battery life
+* Virtual Environments
+** virtualenvwrapper
+   - make virtual env
+     - =mkvirtualenv [-p /usr/bin/python2.7] my_env=
+   - use =workon= to list envs
+   - =workon env= to workon an env
+   - =deactivate= to deactivate env
+** pyenv
+   - manages python version
+   - =pyenv install /version/=  
+   | CMD        | Desc                 |
+   |------------+----------------------|
+   | pyenv root | print root directory |
+   |            |                      |
+** pyenv-virtualenv
+   | CMD                                          | Desc                                  |
+   |----------------------------------------------+---------------------------------------|
+   | pyenv virtualenvs                            | list virtual envs                     |
+   | pyenv virtualenv /pyenv-version/ /venv-name/ | use /pyvenv-version/ to create /venv/ |
+   | pyenv activate /venv/                        | activate /venv/                       |
+   | pyenv deactivate                             | deactivate current venv               |
+   | pyenv uninstall /venv/                       | delete /venv/                         |
+   
