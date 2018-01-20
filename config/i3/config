@@ -71,6 +71,7 @@ bindsym $mod+b border none
 # bindsym $mod+x exec rofi -show run -lines 3 -eh 2 -width 100 -padding 300 -opacity "100" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "SFNS Display Light  18"
 # bindsym $mod+x exec rofi -show run -theme /usr/share/rofi/themes/android_notification.rasi
 bindsym $mod+x exec rofi -show run -theme custom.rasi
+bindsym $mod+w exec rofi -show window -theme custom.rasi
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -246,9 +247,9 @@ exec '--no-startup-id "pulseaudio --start'
 exec xbindkeys -p
 exec "emacs --daemon"
 exec "redshift"
-exec "dropbox"
-exec "megasync"
 exec "workrave"
+exec "dropbox"
 exec --no-startup-id "devmon --no-gui" # auto-mount external devices
 exec "feh --bg-scale /home/yungcheeze/Pictures/wallpapers/survivor_tree-wallpaper-trimmed.jpg" # set background
 exec compton -f
+exec "megasync"
