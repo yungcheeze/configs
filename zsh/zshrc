@@ -114,3 +114,15 @@ fi
 
 # Aliases
 alias cc_args="python ~/_configs/scripts/cc_args.py"
+
+#pyenv stuff
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
+# Virtual Env stuff
+export WORKON_HOME=~/.virtualenvs
+export PROJECT_HOME=~/Documents/VENV_PROJECTS
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+source /usr/bin/virtualenvwrapper.sh
