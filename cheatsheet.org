@@ -32,4 +32,49 @@ NOTE: may reduce battery life
    | pyenv activate /venv/                        | activate /venv/                       |
    | pyenv deactivate                             | deactivate current venv               |
    | pyenv uninstall /venv/                       | delete /venv/                         |
-   
+* Ipython
+  - run shell commands with !
+  - =var = %sx cmd= set var to output of cmd
+  - =C-r= regex search command history
+  - pass =--logfile=log.py= to save all In blocks to logfile
+    - alternatively call =%logstart [log_name [log_model]]=
+      - [over:] overwrite existing log_name.
+      - [backup:] rename (if exists) to log_name~ and start log_name.
+      - [append:] well, that says it.
+      - [rotate:] create rotating logs log_name.1~, log_name.2~, etc.
+    - =%edit file.py+= open file in editor and execute on quit.
+    - =%edit -p= edit last file
+    - append =?= after object to help and =??= to get more help
+    - access variables in shell commands by prepending with =$=
+
+** Magics
+http://ipython.readthedocs.io/en/stable/interactive/magics.html
+  - =%pdoc= <object>: Print (or run through a pager if too long) the docstring for
+    an object. If the given object is a class, it will print both the class and
+    the constructor docstrings.
+  - =%pdef= <object>: Print the call signature for any callable object. If the
+    object is a class, print the constructor information.
+  - =%psource= <object>: Print (or run through a pager if too long) the source code
+    for an object.
+  - =%pfile= <object>: Show the entire source file where an object was defined via a
+    pager, opening it at the line where the object definition begins.
+  - =%who=/=%whos=: These functions give information about identifiers you have
+    defined interactively (not things you loaded or defined in your
+    configuration files). =%who= just prints a list of identifiers and =%whos=
+    prints a table with some basic details about each identifier.
+  - =%logstart=
+  - =%logoff=
+  - =%logon=
+  - =%pylab= load matplotlib and numpy
+    - also loads pylab* and numpy*
+  - =%run= execute python file
+  - =%sx= run shell command and capture output
+  - =%tb= print last traceback
+
+** Cell Magics
+   - prepend %% to apply magic to entire cell
+     - writefile [-a[ppend]]
+     - sh
+     - bash
+     - latex
+     - javascript
