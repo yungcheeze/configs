@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export TERM="xterm-256color"
+
 # Path to your oh-my-zsh installation.
 export ZSH=/usr/share/oh-my-zsh
 
@@ -9,7 +11,8 @@ export ZSH=/usr/share/oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="classyTouch"
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='nerdfont-complete'
+# POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_MODE='awesome-fontconfig'
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir_writable dir rbenv pyenv virtualenv vcs)
@@ -20,8 +23,10 @@ POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0C6'
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0c7'
 POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=$'\uE0C4'
 POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=$'\uE0c5'
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=$'%F{11}┌─╼'
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=$'%F{11}└────╼ %F{255}'
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=$'%F{11}%B┌─╼%b'
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=$'%F{11}%B└────╼%b %F{255}'
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{yellow}%K{black}%} \uf120 %b%f%k%F{black}%}\ue0c4 %{%f%}"
 POWERLEVEL9K_LINUX_ICON=$'\uF300'
 
 POWERLEVEL9K_VIRTUALENV_FOREGROUND='232'
@@ -91,14 +96,16 @@ source $ZSH/oh-my-zsh.sh
 # export EDITOR="emacsclient -t -a emacs"
 export EDITOR="emacsclient -t"
 export ALTERNATE_EDITOR=""
-# export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI with non-daemon as alternate
 export VISUAL="emacsclient -c"         # $VISUAL opens in GUI with non-daemon as alternate
-
 alias e="emacsclient -c"                      # used to be "emacs -nw"
 alias et="emacsclient -t"                      # used to be "emacs -nw"
-# alias emax="emacsclient -t -a emacs"                      # used to be "emacs -nw"
-# alias semac="sudo emacsclient -t -a emacs"                # used to be "sudo emacs -nw"
-# alias emacsc="emacsclient -c -a emacs"           # new - opens the GUI with alternate non-daemon
+
+# FASD
+eval "$(fasd --init auto)"
+alias ef='f -e "emacsclient -t"' # quick opening files with emacs
+# alias m='f -e mplayer' # quick opening files with mplayer
+# alias o='a -e xdg-open' # quick opening files with xdg-open
+
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
