@@ -1,0 +1,6 @@
+if tmux ls | grep scratch
+then
+  tmux attach -t scratch
+else
+  tmux new -s scratch
+fi
