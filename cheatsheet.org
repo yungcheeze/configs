@@ -78,3 +78,20 @@ http://ipython.readthedocs.io/en/stable/interactive/magics.html
      - bash
      - latex
      - javascript
+* fasd
+  - z: cd autojump
+  - f: file
+  - a: any
+  - s: show/search/select
+  - d: directory
+  - sf: interative file selection
+  - sd: interactive dir selection
+* Look into
+- fu search https://www.youtube.com/watch?v=Xeni7mHIVPE&list=PL628AB8A7B7A877D8&index=61
+add: "let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'" to your vimrc
+* Invalid gpg keys
+  - look in pkgbuild for key
+  - add key to your keyring via =gpg --recv-keys <key>=
+* Bash Magic
+** Append to file
+   <shell_output> >> file
