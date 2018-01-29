@@ -95,3 +95,14 @@ add: "let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycm
 * Bash Magic
 ** Append to file
    <shell_output> >> file
+* TMUX
+  Prefix (C-i) = ^
+  | Console          | KBD | CMD            | Desc                     |
+  |------------------+-----+----------------+--------------------------|
+  |                  | ^x  |                | kill pane                |
+  |                  | C-d |                | kill pane                |
+  |                  |     | :clear-history | clear scrollback history |
+  | tmux source-file |     | :source file   | load tmux config         |
+  |                  |     |                |                          |
+** Packages
+   - urlview
