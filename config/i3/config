@@ -239,7 +239,7 @@ bindsym $mod+Shift+i move scratchpad
 bindsym $mod+i scratchpad show
 
 # terminal
-exec "alacritty -t scratch -e /home/yungcheeze/_configs/scripts/scratch "
+exec "alacritty -t scratch -e /home/yungcheeze/_configs/scripts/tscratch"
 for_window [class="scratch"] move scratchpad 
 # start a terminal
 bindsym $mod+Return "exec alacritty -e /home/yungcheeze/_configs/scripts/tnormal "
