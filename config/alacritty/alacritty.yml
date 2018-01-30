@@ -109,45 +109,45 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x0f0f0f'
-    foreground: '0xeaeaea'
+    background: '0x0b141a' # seagrey 1
+    foreground: '0x808487' # seagrey 2
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x000000'
-    cursor: '0xffffff'
+    text: '0xffffff' # seagrey 4
+    cursor: '0xe6eaed' # seagrey 3
 
   # Normal colors
-  normal:
+  normal: # petrel accents (maybe grey gull)
     black:   '0x000000'
-    red:     '0xd54e53'
-    green:   '0xb9ca4a'
-    yellow:  '0xe6c547'
-    blue:    '0x7aa6da'
-    magenta: '0xc397d8'
-    cyan:    '0x70c0ba'
+    red:     '0xba656d'
+    green:   '0x3f8f36'
+    yellow:  '0x947b38'
+    blue:    '0x4384b0'
+    magenta: '0xb06886'
+    cyan:    '0x35898c'
     white:   '0xffffff'
 
   # Bright colors
-  bright:
+  bright: # seagull
     black:   '0x666666'
-    red:     '0xff3334'
-    green:   '0x9ec400'
-    yellow:  '0xe7c547'
-    blue:    '0x7aa6da'
-    magenta: '0xb77ee0'
-    cyan:    '0x54ced6'
+    red:     '0xff4053'
+    green:   '0x11ab00'
+    yellow:  '0xbf8c00'
+    blue:    '0x0099ff'
+    magenta: '0xff549b'
+    cyan:    '0x00a5ab'
     white:   '0xffffff'
 
   # Dim colors (Optional)
-  dim:
+  dim: # storm petrel
     black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
+    red:     '0x9e7276'
+    green:   '0x5b8a55'
+    yellow:  '0x8a7c55'
+    blue:    '0x5f8299'
+    magenta: '0x997383'
+    cyan:    '0x548587'
     white:   '0xdddddd'
 
 # Visual Bell
