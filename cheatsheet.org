@@ -106,3 +106,6 @@ add: "let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycm
   |                  |     |                |                          |
 ** Packages
    - urlview
+* Jobs
+  - bg: list background jobs
+  - fg: bring job back to foreground
