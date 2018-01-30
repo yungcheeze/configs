@@ -129,14 +129,14 @@ colors:
     white:   '0xffffff'
 
   # Bright colors
-  bright: # seagull
+  bright: # seagull (grey gull)
     black:   '0x666666'
-    red:     '0xff4053'
-    green:   '0x11ab00'
-    yellow:  '0xbf8c00'
-    blue:    '0x0099ff'
-    magenta: '0xff549b'
-    cyan:    '0x00a5ab'
+    red:     '0xdb7681'
+    green:   '0x4aa840'
+    yellow:  '0xad9142'
+    blue:    '0x4e9bcf'
+    magenta: '0xcf7a9d'
+    cyan:    '0x3fa2a6'
     white:   '0xffffff'
 
   # Dim colors (Optional)
