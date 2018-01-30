@@ -109,23 +109,24 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x0b141a' # seagrey 1
-    foreground: '0x808487' # seagrey 2
+    # background: '0x211c0a' # seagrey 1
+    background: '0x191a0b' # seagrey 1
+    foreground: '0xcbd4db' # seagrey 2
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0xffffff' # seagrey 4
-    cursor: '0xe6eaed' # seagrey 3
+    text: '0x808487' # seagrey 4
+    cursor: '0x808487' # seagrey 3
 
   # Normal colors
   normal: # petrel accents (maybe grey gull)
     black:   '0x000000'
     red:     '0xba656d'
-    green:   '0x3f8f36'
+    green:   '0x6fc665'
     yellow:  '0x947b38'
     blue:    '0x4384b0'
     magenta: '0xb06886'
-    cyan:    '0x35898c'
+    cyan:    '0x75f2f4'
     white:   '0xffffff'
 
   # Bright colors
@@ -136,7 +137,7 @@ colors:
     yellow:  '0xad9142'
     blue:    '0x4e9bcf'
     magenta: '0xcf7a9d'
-    cyan:    '0x3fa2a6'
+    cyan:    '0x75f2f4'
     white:   '0xffffff'
 
   # Dim colors (Optional)
@@ -147,7 +148,7 @@ colors:
     yellow:  '0x8a7c55'
     blue:    '0x5f8299'
     magenta: '0x997383'
-    cyan:    '0x548587'
+    cyan:    '0x75f2f4'
     white:   '0xdddddd'
 
 # Visual Bell
