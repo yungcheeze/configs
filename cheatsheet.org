@@ -109,3 +109,9 @@ add: "let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycm
 * Jobs
   - bg: list background jobs
   - fg: bring job back to foreground
+* Chrome
+** Vimium
+| CMD | DESC                     |
+|-----+--------------------------|
+| T   | Search through Open Tabs |
+|     |                          |
