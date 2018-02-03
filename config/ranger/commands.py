@@ -6,6 +6,7 @@
 
 # You always need to import ranger.api.commands here to get the Command class:
 from ranger.api.commands import *
+import re
 
 # A simple command for demonstration purposes follows.
 # -----------------------------------------------------------------------------

@@ -11,8 +11,8 @@ export ZSH=/usr/share/oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="classyTouch"
 ZSH_THEME="powerlevel9k/powerlevel9k"
-# POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_MODE='nerdfont-complete'
+# POWERLEVEL9K_MODE='awesome-fontconfig'
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv pyenv virtualenv vcs)
@@ -113,9 +113,9 @@ alias ef='f -e "emacsclient -t"' # quick opening files with emacs
 # fi
 
 # TILIX
-if [[ $TILIX_ID ]]; then
-        source /etc/profile.d/vte.sh
-fi
+# if [[ $TILIX_ID ]]; then
+#         source /etc/profile.d/vte.sh
+# fi
 
 # old rc stuff
 unsetopt beep
@@ -146,14 +146,10 @@ fi
 # Aliases
 alias cc_args="python ~/_configs/scripts/cc_args.py"
 
-#pyenv stuff
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
 # Virtual Env stuff
 export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=~/Documents/VENV_PROJECTS
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
 source /usr/bin/virtualenvwrapper_lazy.sh

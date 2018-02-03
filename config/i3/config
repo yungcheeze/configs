@@ -231,7 +231,7 @@ bar {
 bindsym $mod+c exec "chromium"
 bindsym $mod+e exec "/home/yungcheeze/bin/start_emacs"
 bindsym $mod+s exec "blockify --log=/home/yungcheeze/.logs/blockify.log"
-bindsym Control_L+Alt_L+Delete exec "systemctl poweroff"
+# bindsym Control_L+Alt_L+Delete exec "systemctl poweroff"
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+i move scratchpad
@@ -257,6 +257,7 @@ exec "emacs --daemon"
 exec "redshift"
 exec "workrave"
 exec "dropbox"
+exec "megasync"
 exec --no-startup-id "devmon --no-gui" # auto-mount external devices
 exec "feh --bg-scale /home/yungcheeze/Pictures/wallpapers/survivor_tree-wallpaper-trimmed.jpg" # set background
 exec compton -f
