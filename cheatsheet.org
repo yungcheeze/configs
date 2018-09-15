@@ -95,6 +95,8 @@ add: "let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycm
 * Bash Magic
 ** Append to file
    <shell_output> >> file
+** output to term AND pipe to file
+   <cmd> | tee <filename>
 * TMUX
   Prefix (C-i) = ^
   | Console          | KBD | CMD            | Desc                     |
@@ -115,3 +117,9 @@ add: "let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycm
 |-----+--------------------------|
 | T   | Search through Open Tabs |
 |     |                          |
+* Cron ideas
+- clear spotify cache dir
+* Pacman
+| Option | Command                 |
+|--------+-------------------------|
+| -Fy    | Update Package Database |

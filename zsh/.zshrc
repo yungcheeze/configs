@@ -18,6 +18,7 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv pyenv virtualenv vcs)
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs history time os_icon)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs dir_writable os_icon)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
 POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0C6'
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0c7'
@@ -37,7 +38,7 @@ POWERLEVEL9K_OS_ICON_FOREGROUND='147'
 POWERLEVEL9K_OS_ICON_BACKGROUND='027'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='7'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='3'
-
+[ -n "$PS1" ] && sh ~/.vim-spectr/shell/vimspectrgrey-dark
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
@@ -100,6 +101,8 @@ export VISUAL="emacsclient -c"         # $VISUAL opens in GUI with non-daemon as
 alias e="emacsclient -c"                      # used to be "emacs -nw"
 alias et="emacsclient -t"                      # used to be "emacs -nw"
 
+# ls is so ANNOYING
+alias ls="ls --color=never"
 # FASD
 eval "$(fasd --init auto)"
 alias ef='f -e "emacsclient -t"' # quick opening files with emacs

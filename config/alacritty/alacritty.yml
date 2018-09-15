@@ -110,7 +110,8 @@ colors:
   # Default colors
   primary:
     # background: '0x211c0a' # seagrey 1
-    background: '0x191a0b' # seagrey 1
+    # background: '0x191a0b' # seagrey 1
+    background: '0x282c34' # seagrey 1
     foreground: '0xcbd4db' # seagrey 2
 
   # Colors the cursor will use if `custom_cursor_colors` is true
@@ -242,8 +243,10 @@ live_config_reload: true
 #
 shell:
   program: /bin/zsh
-  # args:
-  #   --c "tmux"
+  args:
+    # [ -n "$PS1" ] && sh ~/.vim-spectr/shell/vimspectrgrey-dark
+    # sh ~/.vim-spectr/shell/vimspectrgrey-dark
+    # --c "tmux"
 
 # Key bindings
 #

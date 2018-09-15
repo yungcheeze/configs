@@ -155,7 +155,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # lock i3 
-bindsym $mod+Shift+w exec "/usr/share/i3lock-fancy/lock"
+bindsym $mod+Shift+w exec "i3lock-fancy"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -229,13 +229,16 @@ bar {
 
 #apps
 bindsym $mod+c exec "chromium"
+bindsym $mod+q exec "qutebrowser"
 bindsym $mod+e exec "/home/yungcheeze/bin/start_emacs"
 bindsym $mod+s exec "blockify --log=/home/yungcheeze/.logs/blockify.log"
+bindsym $mod+v exec "pavucontrol"
 # bindsym Control_L+Alt_L+Delete exec "systemctl poweroff"
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+i move scratchpad
 # Show the first scratchpad window
+# bindsym $mod+i [instance='scratch']scratchpad show
 bindsym $mod+i scratchpad show
 
 # terminal
@@ -243,7 +246,9 @@ exec "alacritty -t scratch -e /home/yungcheeze/_configs/scripts/tscratch"
 for_window [class="scratch"] move scratchpad 
 # start a terminal
 bindsym $mod+Return "exec alacritty -e /home/yungcheeze/_configs/scripts/tnormal "
-bindsym $mod+semicolon "exec /home/yungcheeze/_configs/scripts/alacritty-scratch && i3-msg scratchpad show"
+bindsym $mod+semicolon "exec /home/yungcheeze/_configs/scripts/alacritty-scratch && i3-msg [instance='scratch']scratchpad show"
+
+for_window [class="zazu"] floating enable
 
 # blocks caps/num lock
 
@@ -253,12 +258,15 @@ bindsym $mod+semicolon "exec /home/yungcheeze/_configs/scripts/alacritty-scratch
 #startup commands
 exec '--no-startup-id "pulseaudio --start'
 exec xbindkeys -p
+exec xset -b
 exec "emacs --daemon"
 exec "redshift"
 exec "workrave"
 exec "dropbox"
-exec "megasync"
 exec --no-startup-id "devmon --no-gui" # auto-mount external devices
 exec "feh --bg-scale /home/yungcheeze/Pictures/wallpapers/survivor_tree-wallpaper-trimmed.jpg" # set background
 exec compton -f
+exec zazu
+exec blueman-applet
+
 
