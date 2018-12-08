@@ -100,6 +100,7 @@ export ALTERNATE_EDITOR=""
 export VISUAL="emacsclient -c"         # $VISUAL opens in GUI with non-daemon as alternate
 alias e="emacsclient -c"                      # used to be "emacs -nw"
 alias et="emacsclient -t"                      # used to be "emacs -nw"
+alias restart-emacs="systemctl restart emacs"
 
 # ls is so ANNOYING
 alias ls="ls --color=never"
