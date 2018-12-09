@@ -1,0 +1,8 @@
+# help emacs find ssh-key
+Host github.com
+     IdentitiesOnly yes
+     IdentityFile ~/.ssh/github_rsa
+
+Host github
+     User git
+     HostName github.com
