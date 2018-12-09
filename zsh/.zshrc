@@ -16,7 +16,7 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv pyenv virtualenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs history os_icon)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs os_icon)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
 POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0C6'
@@ -84,11 +84,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
 # Emacs
 export EDITOR="emacsclient -t"
@@ -103,34 +98,9 @@ alias ls="ls --color=never"
 # FASD
 eval "$(fasd --init auto)"
 alias ef='f -e "emacsclient -t"' # quick opening files with emacs
-# alias m='f -e mplayer' # quick opening files with mplayer
-# alias o='a -e xdg-open' # quick opening files with xdg-open
-
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# TILIX
-# if [[ $TILIX_ID ]]; then
-#         source /etc/profile.d/vte.sh
-# fi
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing
