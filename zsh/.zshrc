@@ -10,23 +10,20 @@ export ZSH=/usr/share/oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="classyTouch"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="../../zsh-theme-powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 # POWERLEVEL9K_MODE='awesome-fontconfig'
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv pyenv virtualenv vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs history time os_icon)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs dir_writable os_icon)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs history os_icon)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
 POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0C6'
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0c7'
 POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=$'\uE0C4'
 POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=$'\uE0c5'
-# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=$'%F{11}%B┌─╼%b'
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=$'%F{11}%B└────╼%b %F{255}'
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{yellow}%K{black}%} \uf120 %b%f%k%F{black}%}\ue0c4 %{%f%}"
 POWERLEVEL9K_LINUX_ICON=$'\uF300'
 
@@ -94,7 +91,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # Emacs
-# export EDITOR="emacsclient -t -a emacs"
 export EDITOR="emacsclient -t"
 export ALTERNATE_EDITOR=""
 export VISUAL="emacsclient -c"         # $VISUAL opens in GUI with non-daemon as alternate
@@ -120,10 +116,6 @@ alias ef='f -e "emacsclient -t"' # quick opening files with emacs
 # if [[ $TILIX_ID ]]; then
 #         source /etc/profile.d/vte.sh
 # fi
-
-# old rc stuff
-unsetopt beep
-bindkey -e
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
