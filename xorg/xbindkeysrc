@@ -36,11 +36,11 @@
 
 
 # Increase volume
-"pamixer --increase 1"
+"amixer -D pulse sset Master 1%+"
    XF86AudioRaiseVolume
 
 # Decrease volume
-"pamixer --decrease 1"
+"amixer -D pulse sset Master 1%-"
    XF86AudioLowerVolume
 
 # decrease brightness
@@ -52,7 +52,7 @@
    XF86MonBrightnessUp
 
 #toggle mute
-"pamixer --toggle-mute"
+"amixer sset Master toggle"
     m:0x0 + c:121
     XF86AudioMute 
 
