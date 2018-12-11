@@ -7,16 +7,17 @@
 
 # i3 config file (v4)
 #
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 9
+#font pango:monospace 8
 
-# thin borders
-for_window [class="^.*"] border none
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:SFNS Display Regular 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -31,13 +32,34 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-bindsym $mod+x exec rofi -show run -theme flat-orange
-bindsym $mod+w exec rofi -show window -theme flat-orange
+# main colours
+set $bg-color 	         #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          $bg-color
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color  $bg-color
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color  $bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
+# client.focused          $bg-color           $bg-color          $text-color          #795dcc
+# client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color  #795dcc
+# client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color  #795dcc
+# client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #795dcc
+
+client.background       #000000
+
+# borders
+for_window [class="^.*"] border pixel 1
+bindsym $mod+Shift+b border normal
+bindsym $mod+b border none
+
+bindsym $mod+x exec rofi -show run
+bindsym $mod+w exec rofi -show window
+
 
 # change focus
 bindsym $mod+h focus left
@@ -64,10 +86,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-# bindsym $mod+/ split h
+bindsym $mod+slash split h
 
 # split in vertical orientation
-# bindsym $mod+v split v
+bindsym $mod+minus split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -84,10 +106,24 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+bracketleft focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+bracketright focus child
+
+workspace 1 output VGA-0
+workspace 2 output VGA-0
+workspace 3 output VGA-0
+workspace 4 output VGA-0
+workspace 5 output VGA-0
+workspace 6 output HDMI-0
+workspace 7 output HDMI-0
+workspace 8 output HDMI-0
+workspace 9 output HDMI-0
+workspace 10 output HDMI-0
+
+#switch between monitors
+bindsym $mod+m focus output left
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -113,92 +149,66 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+for_window [class="Pavucontrol"] floating enable
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
-
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+z exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# lock
-bindsym $mod+Shift+w exec i3lock-fancy-rapid 9 3
-bindsym $mod+z exec dm-tool lock
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# lock i3 
+bindsym $mod+Shift+w exec "gnome-screensaver-command -l"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-    # These bindings trigger as soon as you enter the resize mode
-
-    # Pressing left will shrink the window’s width.
-    # Pressing right will grow the window’s width.
-    # Pressing up will shrink the window’s height.
-    # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-    # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676e7d
-set $urgent-bg-color     #e53935
-set $indicator-color     #a0a0a0
-
-# set window colors
-#                       border             background         text                 indicator
-client.focused          $bg-color          $bg-color          $text-color          $indicator-color
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
-client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $indicator-color
-
-#gaps #gap-type #px
-gaps  inner  6
-gaps  outer  3
-
-#smart_gaps
-# smart_gaps on
-set $mode_gaps Gaps (global): (+) on, (-) off
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym plus   gaps inner all set 8; gaps outer all set 5;
-        bindsym minus  gaps inner all set 0; gaps outer all set 0;
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-set $mode_gaps_local Gaps (local): (+) on, (-) off
-bindsym $mod+g mode "$mode_gaps_local"
-
-mode "$mode_gaps_local" {
-        bindsym plus   gaps inner current set 8; gaps outer current set 5;
-        bindsym minus  gaps inner current set 0; gaps outer current set 0;
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+bar {
+	position top
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        # status_command i3status
+        colors {
+            background $bg-color
+                separator #757575
+            #                  border             background         text
+            focused_workspace  $bg-color          $bg-color          $text-color
+            inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+            urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+        }
+}
 
-# floating windows
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Kalu"] floating enable
+#Added kbds
+#volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +1% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -1% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+#spotify controls
+ bindsym XF86AudioPlay exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym $mod+XF86AudioLowerVolume exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+#apps
+bindsym $mod+c exec "google-chrome"
+bindsym $mod+s exec "blockify & spotify"
+bindsym $mod+e exec "/home/ucizi/bin/start_emacs"
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+i move scratchpad
@@ -206,28 +216,11 @@ bindsym $mod+Shift+i move scratchpad
 bindsym $mod+i scratchpad show
 
 # start a terminal
-exec "alacritty -t scratch -e ~/_configs/scripts/tscratch"
-for_window [title="scratch"] move scratchpad 
+bindsym $mod+Return "exec alacritty -e tmux attach"
 
-# start a terminal
-bindsym $mod+Return "exec alacritty -e ~/_configs/scripts/tnormal"
-bindsym $mod+semicolon "exec ~/_configs/scripts/alacritty-scratch || i3-msg scratchpad show"
-
-# App shortcuts
-bindsym $mod+c exec "/usr/bin/chromium"
-bindsym $mod+n exec "/usr/bin/thunar"
-bindsym $mod+e exec "~/_configs/scripts/start_emacs"
-
-# Redirect sound to headphones
-bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
-
-# Autostart apps
-exec "feh --bg-scale ~/Pictures/wallpaper.jpg"
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id "compton -cC"
-exec --no-startup-id "nitrogen --restore"
-exec "redshift"
-exec "dropbox"
-exec --no-startup-id "nm-applet"
-exec "xbindkeys"
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#startup commands
+exec compton -cC
+exec alacritty -e tmux attach
+exec feh --bg-scale /home/ucizi/Pictures/telescope.jpg
+exec workrave
+exec redshift
