@@ -216,11 +216,11 @@ bindsym $mod+Shift+i move scratchpad
 bindsym $mod+i scratchpad show
 
 # start a terminal
-exec "alacritty -t scratch -e ~/configs/scripts/tscratch"
+exec "stterm -t scratch -e ~/configs/scripts/tscratch"
 for_window [title="scratch"] move scratchpad 
 
 # start a terminal
-bindsym $mod+Return "exec alacritty -e ~/configs/scripts/tnormal"
+bindsym $mod+Return "exec stterm -e ~/configs/scripts/tnormal"
 bindsym $mod+semicolon "exec ~/configs/scripts/alacritty-scratch || i3-msg scratchpad show"
 
 #startup commands
