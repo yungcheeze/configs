@@ -1,4 +1,4 @@
 if ! ps ax | grep -v grep | grep "alacritty -t scratch"  > /dev/null
 then
-    alacritty -t scratch -e ~/_configs/scripts/tscratch
+    st -t scratch -e ~/_configs/scripts/tscratch
 fi
