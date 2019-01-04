@@ -110,7 +110,7 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
 fi
 
 # Aliases
-alias cc_args="python ~/_configs/scripts/cc_args.py"
+alias cc_args="python ~/configs/scripts/cc_args.py"
 
 # Virtual Env stuff
 export WORKON_HOME=~/.virtualenvs
