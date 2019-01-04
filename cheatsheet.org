@@ -123,3 +123,7 @@ add: "let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycm
 | Option | Command                 |
 |--------+-------------------------|
 | -Fy    | Update Package Database |
+* Ranger
+  | cmd | desc          |
+  |-----+---------------|
+  | C-l | redraw screen |
