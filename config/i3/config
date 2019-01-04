@@ -216,12 +216,12 @@ bindsym $mod+Shift+i move scratchpad
 bindsym $mod+i scratchpad show
 
 # start a terminal
-exec "stterm -t scratch -e ~/configs/scripts/tscratch"
+# exec "tilda -t scratch -c ~/configs/scripts/tscratch"
 for_window [title="scratch"] move scratchpad 
 
 # start a terminal
-bindsym $mod+Return "exec stterm -e ~/configs/scripts/tnormal"
-bindsym $mod+semicolon "exec ~/configs/scripts/alacritty-scratch || i3-msg scratchpad show"
+bindsym $mod+Return "exec tilda -c tmux attach"
+bindsym $mod+semicolon "exec tilda -c tmux"
 
 #startup commands
 exec compton -cC

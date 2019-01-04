@@ -1,4 +1,4 @@
 if ! ps ax | grep -v grep | grep "alacritty -t scratch"  > /dev/null
 then
-    stterm -t scratch -e ~/configs/scripts/tscratch
+    tilda -t scratch -c ~/configs/scripts/tscratch
 fi
