@@ -220,8 +220,8 @@ bindsym $mod+i scratchpad show
 for_window [title="scratch"] move scratchpad 
 
 # start a terminal
-bindsym $mod+Return "exec tilda -c tmux attach"
-bindsym $mod+semicolon "exec tilda -c tmux"
+bindsym $mod+Return "exec gnome-terminal -e tmux attach"
+bindsym $mod+semicolon "exec gnome-terminal -e tmux"
 
 #startup commands
 exec compton -cC
