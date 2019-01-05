@@ -1,4 +1,4 @@
 if ! ps ax | grep -v grep | grep "alacritty -t scratch"  > /dev/null
 then
-    st -t scratch -e ~/_configs/scripts/tscratch
+    st -f 'MesloLGM Nerd Font Mono:size=11' -t scratch -e ~/_configs/scripts/tscratch
 fi
