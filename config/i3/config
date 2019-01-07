@@ -57,8 +57,8 @@ for_window [class="^.*"] border pixel 1
 bindsym $mod+Shift+b border normal
 bindsym $mod+b border none
 
-bindsym $mod+x exec rofi -show run
-bindsym $mod+w exec rofi -show window
+bindsym $mod+x exec rofi -show run -theme sidetab
+bindsym $mod+w exec rofi -show window -theme sidetab
 
 
 # change focus
