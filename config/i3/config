@@ -217,10 +217,11 @@ bindsym $mod+i scratchpad show
 
 # start a terminal
 # exec "tilda -t scratch -c ~/configs/scripts/tscratch"
+exec gnome-terminal -e 'tmux new-session -A -s scratch' -x 'source ~/.zshrc'
 
 # start a terminal
-bindsym $mod+Return "exec gnome-terminal -e tmux attach"
-bindsym $mod+semicolon "exec gnome-terminal -e tmux"
+bindsym $mod+Return "exec gnome-terminal -e 'tmux new-session -A -s tiled'"
+bindsym $mod+semicolon "exec gnome-terminal -e 'tmux new-session -A -s scratch'"
 
 #startup commands
 exec compton -cC
