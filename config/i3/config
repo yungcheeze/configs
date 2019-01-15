@@ -217,7 +217,6 @@ bindsym $mod+i scratchpad show
 
 # start a terminal
 # exec "tilda -t scratch -c ~/configs/scripts/tscratch"
-for_window [title="scratch"] move scratchpad 
 
 # start a terminal
 bindsym $mod+Return "exec gnome-terminal -e tmux attach"
