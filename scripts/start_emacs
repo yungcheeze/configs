@@ -1,6 +1,5 @@
-emacsclient -c
-if test  "z$PIPESTATUS" != "z0"
-then
+#!/bin/sh
+if ! ps h -o pid,args -C emacs | grep -q -- --daemon ; then
     emacs --daemon
-    emacsclient  -c
 fi
+emacsclient -c
