@@ -124,6 +124,7 @@ workspace 10 output HDMI-0
 
 #switch between monitors
 bindsym $mod+m focus output left
+bindsym $mod+Shift+m move workspace to output left
 
 # switch to workspace
 bindsym $mod+1 workspace 1
