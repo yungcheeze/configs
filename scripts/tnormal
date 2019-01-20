@@ -1,6 +1,2 @@
-if  tmux ls | grep tiled
-then
-    tmux attach -t tiled
-else
-    tmux new -s tiled
-fi
+[ -n "$PS1" ] && sh ~/.vim-spectr/shell/vimspectrgrey-dark
+tmux new-session -A -s tiled

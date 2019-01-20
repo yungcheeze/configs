@@ -1,6 +1,2 @@
-if tmux ls | grep scratch
-then
-  tmux attach -t scratch
-else
-  tmux new -s scratch
-fi
+[ -n "$PS1" ] && sh ~/.vim-spectr/shell/vimspectrgrey-dark
+tmux new-session -A -s scratch
