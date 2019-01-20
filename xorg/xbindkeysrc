@@ -56,22 +56,6 @@
     m:0x0 + c:121
     XF86AudioMute 
 
-# PrintScreen to Image
-"escrotum ~/Pictures/Screenshots/SS_%Y-%m-%d_%H:%M:%S.png"
-   Print
-
-# PrintSelection to Image
-"escrotum -s ~/Pictures/ScreenClips/SC_%Y-%m-%d_%H:%M:%S.png"
-   Shift+Print
-
-# PrintScreen To Clipboard
-"escrotum --clipboard"
-    Control+Print
-
-# PrintSelection to Image
-"escrotum -s --clipboard"
-   Control+Shift+Print
-
 # Play-Pause media
 "playerctl play-pause"
     XF86AudioPlay
