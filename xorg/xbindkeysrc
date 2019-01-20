@@ -35,14 +35,6 @@
 
 
 
-# Increase volume
-"amixer -D pulse sset Master 1%+"
-   XF86AudioRaiseVolume
-
-# Decrease volume
-"amixer -D pulse sset Master 1%-"
-   XF86AudioLowerVolume
-
 # decrease brightness
 "xbacklight -dec 5"
    XF86MonBrightnessDown
@@ -50,11 +42,6 @@
 # increase brightness
 "xbacklight -inc 5"
    XF86MonBrightnessUp
-
-#toggle mute
-"amixer sset Master toggle"
-    m:0x0 + c:121
-    XF86AudioMute 
 
 # Play-Pause media
 "playerctl play-pause"
