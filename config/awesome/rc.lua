@@ -323,16 +323,12 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
-    awful.key({ modkey }, "x",
-              function ()
-                awful.spawn.with_shell("rofi -show combi -theme sidetab")
-              end,
+    awful.key({ modkey }, "x", function () awful.spawn.with_shell("rofi -show run -theme sidetab") end,
               {description = "rofi", group = "launcher"}),
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
+    awful.key({ modkey }, "w", function () awful.spawn.with_shell("rofi -show window -theme sidetab") end,
+      {description = "rofi", group = "launcher"}),
 
-    awful.key({ modkey }, "e", function() awful.spawn.with_shell("emacsclient -c") end,
+    awful.key({ modkey }, "e", function() awful.spawn.with_shell("~/configs/scripts/start_emacs") end,
       {description = "emacs", group = "launcher"}),
 
     awful.key({ modkey }, "c", function() awful.spawn.with_shell("google-chrome") end,
