@@ -36,11 +36,11 @@
 
 
 # Increase volume
-"amixer -D pulse sset Master 1%+"
+"pactl -- set-sink-volume 0 +1%"
    XF86AudioRaiseVolume
 
 # Decrease volume
-"amixer -D pulse sset Master 1%-"
+"pactl -- set-sink-volume 0 -1%"
    XF86AudioLowerVolume
 
 # decrease brightness
@@ -52,7 +52,7 @@
    XF86MonBrightnessUp
 
 #toggle mute
-"amixer sset Master toggle"
+"pactl set-sink-mute 0 toggle"
     m:0x0 + c:121
     XF86AudioMute 
 
@@ -73,7 +73,7 @@
    Control+Shift+Print
 
 # Play-Pause media
-"playerctl play-pause"
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
     XF86AudioPlay
 
 # Next-Track media
