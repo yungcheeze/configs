@@ -330,7 +330,13 @@ globalkeys = gears.table.join(
               {description = "rofi", group = "launcher"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+
+    awful.key({ modkey }, "e", function() awful.spawn.with_shell("emacsclient -c") end,
+      {description = "emacs", group = "launcher"}),
+
+    awful.key({ modkey }, "c", function() awful.spawn.with_shell("google-chrome") end,
+      {description = "google-chrome", group = "launcher"})
 )
 clientkeys = gears.table.join(
     awful.key({ modkey,           }, "f",
