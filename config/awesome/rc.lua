@@ -325,14 +325,9 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey }, "x",
               function ()
-                  awful.prompt.run {
-                    prompt       = "Run Lua code: ",
-                    textbox      = awful.screen.focused().mypromptbox.widget,
-                    exe_callback = awful.util.eval,
-                    history_path = awful.util.get_cache_dir() .. "/history_eval"
-                  }
+                awful.spawn.with_shell("rofi -show combi -theme sidetab")
               end,
-              {description = "lua execute prompt", group = "awesome"}),
+              {description = "rofi", group = "launcher"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
