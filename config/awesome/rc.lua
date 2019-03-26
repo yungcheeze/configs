@@ -566,17 +566,16 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 
-local function run_if_not_running(program, arguments)
-  awful.spawn.easy_async(
-    "pgrep " .. program,
-    function(stdout, stderr, reason, exit_code)
-      naughty.notify { text = stdout .. exit_code }
-      if exit_code ~= 0 then
-        awful.spawn.with_shell(program .. " " .. arguments)
-      end
-  end)
-end
+do
+  local cmds =
+    {
+      "redshift",
+      "xbindkeys",
+      "compton",
+      "emacs --daemon"
+    }
 
-run_if_not_running("redshift", "")
-run_if_not_running("xbindkeys", "")
-run_if_not_running("compton", "")
+  for _,i in pairs(cmds) do
+    awful.spawn.with_shell(i)
+  end
+end
