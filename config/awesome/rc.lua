@@ -557,7 +557,6 @@ do
       "redshift",
       "xbindkeys",
       "compton",
-      "emacs --daemon"
     }
 
   for _,i in pairs(cmds) do
