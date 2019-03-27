@@ -226,7 +226,7 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+    awful.key({ modkey,   "Shift"        }, ".",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
@@ -267,6 +267,30 @@ globalkeys = gears.table.join(
             end
         end,
         {description = "go back", group = "client"}),
+    awful.key({ modkey, }, "e", function()
+        awful.screen.connect_for_each_screen(function(screen)
+            local tag = screen.tags[1]
+            local current_tag = screen.selected_tag
+            if tag then
+              tag:view_only()
+            end
+            if tag and screen.index == 1 then
+              awful.screen.focus(screen)
+            end
+        end)
+                                 end,
+      {description = "move all screens to home tag", group = "tag"}),
+
+    awful.key({ modkey, }, "s", function()
+        awful.screen.connect_for_each_screen(function(s)
+            local tag = s.tags[2]
+            if tag and s.index == 2 then
+              tag:view_only()
+              awful.screen.focus(s)
+            end
+        end)
+                                 end,
+      {description = "move second screen to spotify tag", group = "tag"}),
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
@@ -315,7 +339,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "w", function () awful.spawn.with_shell("rofi -show window -theme sidetab") end,
       {description = "rofi", group = "launcher"}),
 
-    awful.key({ modkey }, "e", function() awful.spawn.with_shell("~/configs/scripts/start_emacs") end,
+    awful.key({ modkey, "Shift" }, "e", function() awful.spawn.with_shell("~/configs/scripts/start_emacs") end,
       {description = "emacs", group = "launcher"}),
 
     awful.key({ modkey }, "c", function() awful.spawn.with_shell("google-chrome") end,
