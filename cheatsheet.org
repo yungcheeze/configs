@@ -127,3 +127,7 @@ add: "let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycm
   | cmd | desc          |
   |-----+---------------|
   | C-l | redraw screen |
+* Awesome
+** Fixes
+*** mouse follow focus
+    - use client focus callback to set mouse coords to client coords
