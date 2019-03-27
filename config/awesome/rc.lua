@@ -542,7 +542,10 @@ client.connect_signal("mouse::enter", function(c)
     end
 end)
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+client.connect_signal("focus", function(c)
+                        c.border_color = beautiful.border_focus
+                        mouse.coords({x = c.x + c.width/2, y = c.y + c.height/2})
+end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
