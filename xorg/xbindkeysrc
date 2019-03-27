@@ -73,15 +73,15 @@
    Control+Shift+Print
 
 # Play-Pause media
-"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+"playerctl play-pause"
     XF86AudioPlay
 
 # Next-Track media
 "playerctl next"
-    XF86AudioNext
+    Mod4+XF86AudioRaiseVolume
 
 # Prev-Track media
 "playerctl previous"
-    XF86AudioPrev
+    Mod4+XF86AudioLowerVolume
 #
 # End of xbindkeys configuration
