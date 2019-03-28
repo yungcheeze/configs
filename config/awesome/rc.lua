@@ -268,13 +268,12 @@ globalkeys = gears.table.join(
         end,
         {description = "go back", group = "client"}),
     awful.key({ modkey, }, "e", function()
-        awful.screen.connect_for_each_screen(function(screen)
-            local tag = screen.tags[1]
-            local current_tag = screen.selected_tag
-            if tag then
-              tag:view_only()
-            end
-        end)
+        for s in screen do
+          local tag = s.tags[1]
+          if tag then
+            tag:view_only()
+          end
+        end
                                  end,
       {description = "move all screens to home tag", group = "tag"}),
 
