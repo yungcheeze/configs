@@ -274,21 +274,14 @@ globalkeys = gears.table.join(
             if tag then
               tag:view_only()
             end
-            if tag and screen.index == 1 then
-              awful.screen.focus(screen)
-            end
         end)
                                  end,
       {description = "move all screens to home tag", group = "tag"}),
 
     awful.key({ modkey, }, "s", function()
-        awful.screen.connect_for_each_screen(function(s)
-            local tag = s.tags[2]
-            if tag and s.index == 2 then
-              tag:view_only()
-              awful.screen.focus(s)
-            end
-        end)
+        awful.screen.focus(2)
+        local tag = awful.screen.focused().tags[2]
+        tag:view_only()
                                  end,
       {description = "move second screen to spotify tag", group = "tag"}),
 
