@@ -565,7 +565,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- always move mouse to center of currently focused tag
-awful.tag.attached_connect_signal(nil, "property::selected",function (tag)
+awful.tag.attached_connect_signal(nil, "request::select",function (tag)
                                       local pos = tag.screen.geometry
                                       mouse.coords({x = pos.x + pos.width/2, y = pos.y + pos.height/2})
 end)
