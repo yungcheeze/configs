@@ -561,11 +561,15 @@ end)
 
 client.connect_signal("focus", function(c)
                         c.border_color = beautiful.border_focus
-                        mouse.coords({x = c.x + c.width/2, y = c.y + c.height/2})
 end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- always move mouse to center of currently focused tag
+awful.tag.attached_connect_signal(nil, "property::selected",function (tag)
+                                      local pos = tag.screen.geometry
+                                      mouse.coords({x = pos.x + pos.width/2, y = pos.y + pos.height/2})
+end)
 
 do
   local cmds =
