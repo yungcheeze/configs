@@ -6,5 +6,5 @@ echo "((nil .
    (helm-make-build-dir . \"cmake-ide-build\")
    (helm-make-arguments . \"-j4\")
    (helm-ctest-dir . \"$here/build/cmake-ide-build\")
-   (gtest-target . \"$here/OUT/bin/unit_tests\")
+   (gtest-target-dir . \"$here/OUT/bin/\")
   )))" >> .dir-locals.el
