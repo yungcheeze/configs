@@ -22,6 +22,7 @@ set scrolloff 10
 
 # use enter for shell commands
 map <enter> shell
+map S !$SHELL
 
 # execute current file (must be executable)
 map x $$f
