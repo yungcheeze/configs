@@ -31,6 +31,28 @@ map X !$f
 map o &mimeopen $f
 map O $mimeopen --ask $f
 
+#file manipulation
+map D delete
+cmd symlink %{{
+    load=$(lf -remote 'load')
+    mode=$(echo "$load" | sed -n '1p')
+    list=$(echo "$load" | sed '1d')
+    if [ $mode = 'copy' ]; then
+        ln -s $list .
+    fi
+    lf -remote 'send load'
+    lf -remote 'send clear'
+}}
+map p
+map pp paste
+map pl symlink
+
+#special directories
+map g.c cd ~/.config
+map g.C cd ~/configs
+map gr cd /
+
+
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for
