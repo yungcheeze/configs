@@ -54,6 +54,5 @@ source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 LFCD=~/configs/config/lf/lfcd.sh
 if [ -f "$LFCD" ]; then
-    echo $LFCD
     source "$LFCD"
 fi
