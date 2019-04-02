@@ -47,8 +47,60 @@ cmd symlink %{{
 map p
 map pp paste
 map pl symlink
-map +ax &chmod a+x $fx;  lf -remote "send $id reload"
+
+map +ur &chmod u+r $fx;  lf -remote "send $id reload"
+map -ur &chmod u-r $fx;  lf -remote "send $id reload"
+map +gr &chmod g+r $fx;  lf -remote "send $id reload"
+map -gr &chmod g-r $fx;  lf -remote "send $id reload"
+map +or &chmod o+r $fx;  lf -remote "send $id reload"
+map +or &chmod o+r $fx;  lf -remote "send $id reload"
+map -ar &chmod a-r $fx;  lf -remote "send $id reload"
+map -ar &chmod a-r $fx;  lf -remote "send $id reload"
+
+map +uw &chmod u+w $fx;  lf -remote "send $id reload"
+map -uw &chmod u-w $fx;  lf -remote "send $id reload"
+map +gw &chmod g+w $fx;  lf -remote "send $id reload"
+map -gw &chmod g-w $fx;  lf -remote "send $id reload"
+map +ow &chmod o+w $fx;  lf -remote "send $id reload"
+map +ow &chmod o+w $fx;  lf -remote "send $id reload"
+map -aw &chmod a-w $fx;  lf -remote "send $id reload"
+map -aw &chmod a-w $fx;  lf -remote "send $id reload"
+
+map +ux &chmod u+x $fx;  lf -remote "send $id reload"
+map -ux &chmod u-x $fx;  lf -remote "send $id reload"
+map +gx &chmod g+x $fx;  lf -remote "send $id reload"
+map -gx &chmod g-x $fx;  lf -remote "send $id reload"
+map +ox &chmod o+x $fx;  lf -remote "send $id reload"
+map +ox &chmod o+x $fx;  lf -remote "send $id reload"
 map -ax &chmod a-x $fx;  lf -remote "send $id reload"
+map -ax &chmod a-x $fx;  lf -remote "send $id reload"
+
+map +uX &chmod u+X $fx;  lf -remote "send $id reload"
+map -uX &chmod u-X $fx;  lf -remote "send $id reload"
+map +gX &chmod g+X $fx;  lf -remote "send $id reload"
+map -gX &chmod g-X $fx;  lf -remote "send $id reload"
+map +oX &chmod o+X $fx;  lf -remote "send $id reload"
+map +oX &chmod o+X $fx;  lf -remote "send $id reload"
+map -aX &chmod a-X $fx;  lf -remote "send $id reload"
+map -aX &chmod a-X $fx;  lf -remote "send $id reload"
+
+map +us &chmod u+s $fx;  lf -remote "send $id reload"
+map -us &chmod u-s $fx;  lf -remote "send $id reload"
+map +gs &chmod g+s $fx;  lf -remote "send $id reload"
+map -gs &chmod g-s $fx;  lf -remote "send $id reload"
+map +os &chmod o+s $fx;  lf -remote "send $id reload"
+map +os &chmod o+s $fx;  lf -remote "send $id reload"
+map -as &chmod a-s $fx;  lf -remote "send $id reload"
+map -as &chmod a-s $fx;  lf -remote "send $id reload"
+
+map +ut &chmod u+t $fx;  lf -remote "send $id reload"
+map -ut &chmod u-t $fx;  lf -remote "send $id reload"
+map +gt &chmod g+t $fx;  lf -remote "send $id reload"
+map -gt &chmod g-t $fx;  lf -remote "send $id reload"
+map +ot &chmod o+t $fx;  lf -remote "send $id reload"
+map +ot &chmod o+t $fx;  lf -remote "send $id reload"
+map -at &chmod a-t $fx;  lf -remote "send $id reload"
+map -at &chmod a-t $fx;  lf -remote "send $id reload"
 
 #special directories
 map g.c cd ~/.config
