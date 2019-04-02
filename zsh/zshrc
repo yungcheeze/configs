@@ -43,6 +43,7 @@ alias e="emacsclient -c"                      # used to be "emacs -nw"
 alias et="emacsclient -t"                      # used to be "emacs -nw"
 
 eval "$(fasd --init posix-hook posix-alias)"
+alias fcd="fasd_cd -id"
 
 # Virtual Env stuff
 export WORKON_HOME=~/.virtualenvs
