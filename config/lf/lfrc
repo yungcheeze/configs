@@ -53,6 +53,9 @@ map g.c cd ~/.config
 map g.C cd ~/configs
 map gr cd /
 
+#fasd
+cmd fasd_cd $lf -remote "send $id cd '$(fasd -sid $@)'"
+map gf push :fasd_cd<space>
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
