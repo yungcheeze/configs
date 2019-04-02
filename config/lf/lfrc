@@ -47,8 +47,8 @@ cmd symlink %{{
 map p
 map pp paste
 map pl symlink
-map +ax &chmod a+x $f;  lf -remote "send $id reload"
-map -ax &chmod a-x $f;  lf -remote "send $id reload"
+map +ax &chmod a+x $fx;  lf -remote "send $id reload"
+map -ax &chmod a-x $fx;  lf -remote "send $id reload"
 
 #special directories
 map g.c cd ~/.config
