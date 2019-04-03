@@ -282,6 +282,13 @@ globalkeys = gears.table.join(
         local tag = awful.screen.focused().tags[2]
         tag:view_only()
                                  end,
+      {description = "move second screen to slack tag", group = "tag"}),
+
+    awful.key({ modkey, "Shift" }, "s", function()
+        awful.screen.focus(2)
+        local tag = awful.screen.focused().tags[3]
+        tag:view_only()
+                                end,
       {description = "move second screen to spotify tag", group = "tag"}),
 
     -- Standard program
