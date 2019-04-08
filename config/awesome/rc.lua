@@ -463,15 +463,12 @@ awful.rules.rules = {
           "copyq",  -- Includes session name in class.
         },
         class = {
-          "Arandr",
+          "Galculator",
+          "feh",
           "Gpick",
-          "Kruler",
-          "MessageWin",  -- kalarm.
-          "Sxiv",
-          "Wpa_gui",
-          "pinentry",
-          "veromix",
-          "xtightvncviewer"},
+          "Lxappearance",
+          "Pavucontrol",
+          },
 
         name = {
           "Event Tester",  -- xev.
@@ -483,13 +480,21 @@ awful.rules.rules = {
       }, properties = { floating = true }},
 
     -- Add titlebars to normal clients and dialogs
-    { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = false }
-    },
+    -- { rule_any = {type = { "normal", "dialog" }
+    --   }, properties = { titlebars_enabled = false }
+    -- },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    { rule_any = {
+        class = {
+          "Slack",
+        },
+    }, properties = { screen = 2, tag = "2" } },
+
+    { rule_any = {
+        class = {
+          "spotify",
+        },
+    }, properties = { screen = 2, tag = "3" } },
 }
 -- }}}
 
@@ -580,6 +585,6 @@ do
     }
 
   for _,i in pairs(cmds) do
-    awful.spawn.with_shell(i)
+    -- awful.spawn.with_shell(i)
   end
 end
