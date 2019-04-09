@@ -53,6 +53,8 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
+export PIPENV_VENV_IN_PROJECT=1
+
 LFCD=~/configs/config/lf/lfcd.sh
 if [ -f "$LFCD" ]; then
     source "$LFCD"
