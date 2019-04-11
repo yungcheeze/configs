@@ -585,6 +585,6 @@ do
     }
 
   for _,i in pairs(cmds) do
-    -- awful.spawn.with_shell(i)
+    awful.spawn.with_shell(i)
   end
 end
