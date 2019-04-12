@@ -582,6 +582,7 @@ do
       "compton",
       "redshift",
       "workrave",
+      "dropbox start",
     }
 
   for _,i in pairs(cmds) do
