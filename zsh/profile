@@ -20,9 +20,10 @@ fi
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 NPM_PACKAGES="${HOME}/.npm-packages"
-AUTOSCRIPT_DIR="${HOME}/configs/autoscripts"
+PATH="$PATH:$NPM_PACKAGES/bin"
 
-export PATH="$PATH:$NPM_PACKAGES/bin:$AUTOSCRIPT_DIR"
+AUTOSCRIPT_DIR="${HOME}/configs/autoscripts"
+PATH="$PATH:$AUTOSCRIPT_DIR"
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
