@@ -1,9 +1,14 @@
-# help emacs find ssh-key
-Host github.com
-     IdentitiesOnly yes
-     IdentityFile ~/.ssh/github_rsa
+Host personal.bitbucket.org
+     User git
+     HostName bitbucket.org
+     IdentityFile ~/.ssh/bitbucket_rsa
 
-Host github
+Host turing.bitbucket.org
+     User git
+     HostName bitbucket.org
+     IdentityFile ~/.ssh/bitbucket_turing_rsa
+
+Host github.com
      User git
      HostName github.com
-     IdentityFile ~/.ssh/github_rsa
+     IdentityFile ~/.ssh/github_yungcheeze_rsa
