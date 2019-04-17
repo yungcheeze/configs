@@ -37,7 +37,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 export EDITOR="emacsclient -t"
-export ALTERNATE_EDITOR=""
+export ALTERNATE_EDITOR="emacs"
 export VISUAL="emacsclient -c"         # $VISUAL opens in GUI with non-daemon as alternate
 alias e="emacsclient -c"                      # used to be "emacs -nw"
 alias et="emacsclient -t"                      # used to be "emacs -nw"
