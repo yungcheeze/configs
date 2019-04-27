@@ -207,7 +207,6 @@ bindsym $mod+i scratchpad show
 
 # start a terminal
 exec "st -f 'MesloLGM Nerd Font Mono:size=11' -t scratch -e ~/_configs/scripts/tscratch"
-for_window [title="scratch"] move scratchpad 
 
 # start a terminal
 bindsym $mod+Return "exec st -f 'MesloLGM Nerd Font Mono:size=11' -e ~/_configs/scripts/tnormal"
