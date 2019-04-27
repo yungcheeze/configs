@@ -27,6 +27,7 @@ import XMonad.Actions.WindowBringer (gotoMenu)
 myTerminal = "st -f 'MesloLGM Nerd Font Mono:size=11'"
 myBrowser = "chromium"
 myEditor = "emacsclient -c -a emacs"
+myLauncher = "/home/ucizi/_configs/scripts/dmenu_recency"
 myModMask = mod4Mask
 myBorderWidth = 1
 
@@ -50,7 +51,7 @@ myTwoPane = renamed [Replace "TwoPane"] $ spacing mySpacing $ TwoPane (3/100) (1
 myKeys =
   [ ("M-S-r", spawn "xmonad --recompile; xmonad --restart")
   , ("M-<Return>", spawn myTerminal)
-  , ("M-x", spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
+  , ("M-x", spawn myLauncher)
   , ("M-<Esc>", io exitSuccess)
   , ("M-c", spawn myBrowser)
   , ("M-S-e", spawn myEditor)
