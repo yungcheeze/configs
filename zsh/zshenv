@@ -1,2 +1,1 @@
-export PATH=$PATH:/opt/paraview/bin/
 export PATH=$PATH:$HOME/.local/bin/
