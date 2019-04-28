@@ -71,7 +71,6 @@ goToEditorWorkspace = do
 
 goToBrowserWorkspace = do
   viewWSGroup "editor+browser"
-  nextScreen
   switchTopic myTopicConfig "browser"
 
 goToSlackWorkspace = do
