@@ -27,6 +27,7 @@ import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen)
 import XMonad.Actions.WindowBringer (gotoMenu)
 import XMonad.Actions.UpdatePointer (updatePointer)
 import XMonad.Actions.TopicSpace
+import XMonad.Actions.DynamicWorkspaceGroups
 
 ------------------------------------------------------------------------
 -- General:
@@ -58,6 +59,28 @@ myTopicConfig = def
     ]
   }
 
+setupMyWSGroups = do
+  addRawWSGroup "editor+browser" [(0, "editor"), (1, "browser")]
+  addRawWSGroup "slack_on_secondary" [(1, "slack")]
+  addRawWSGroup "spotify_on_secondary" [(1, "spotify")]
+
+goToEditorWorkspace = do
+  viewWSGroup "editor+browser"
+  nextScreen
+  switchTopic myTopicConfig "editor"
+
+goToBrowserWorkspace = do
+  viewWSGroup "editor+browser"
+  nextScreen
+  switchTopic myTopicConfig "browser"
+
+goToSlackWorkspace = do
+  viewWSGroup "slack_on_secondary"
+  switchTopic myTopicConfig "slack"
+
+goToSpotifyWorkspace = do
+  viewWSGroup "spotify_on_secondary"
+  switchTopic myTopicConfig "spotify"
 ------------------------------------------------------------------------
 -- Layouts:
 mySpacing = 3
@@ -117,10 +140,10 @@ myKeys =
   , ("M-S-o", shiftNextScreen)
   , ("M-S-q", kill)
   , ("M-C-l", spawn "gnome-screensaver-command --lock")
-  , ("M-e", switchTopic myTopicConfig "editor")
-  , ("M-c", switchTopic myTopicConfig "browser")
-  , ("M-s", switchTopic myTopicConfig "slack")
-  , ("M-S-s", switchTopic myTopicConfig "spotify")
+  , ("M-e", goToEditorWorkspace)
+  , ("M-c", goToBrowserWorkspace)
+  , ("M-s", goToSlackWorkspace)
+  , ("M-S-s", goToSpotifyWorkspace)
   , ("M-S-x", switchTopic myTopicConfig "extra")
   , ("M-a", currentTopicAction myTopicConfig)
   ]
@@ -143,6 +166,7 @@ removedKeys =
 ------------------------------------------------------------------------
 -- Startup:
 myStartupHook = do
+  setupMyWSGroups
   spawnOnce myStatusBar
   spawnOnce "redshift"
   spawnOnce "compton -b"
