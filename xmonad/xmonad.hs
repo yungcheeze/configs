@@ -109,6 +109,7 @@ myStartupHook = do
   spawnOnce myStatusBar
   spawnOnce "redshift"
   spawnOnce "compton -b"
+  spawnOnce "nitrogen --restore"
 
 ------------------------------------------------------------------------
 -- Main:
