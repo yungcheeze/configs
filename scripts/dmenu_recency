@@ -43,4 +43,4 @@ if [[ ! $cmd == *[[]* ]]; then
     mv "$recent_cache.$$"  "$recent_cache"
 fi
 
-exec "$cmd"
+eval "$cmd &"
