@@ -46,8 +46,8 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = OverpassMono Nerd Font:size=10:weight=bold:antialias=false;0
-font-1 = Overpass Nerd Font Mono:size=8:weight=normal:antialias=false;0
+font-0 = TerminessTTF Nerd Font Mono:size=10:weight=bold:antialias=false;0
+font-1 = TerminessTTF Nerd Font Mono:size=8:weight=normal:antialias=false;0
 font-2 = monospace:size=8;0
 
 modules-left = bspwm i3
