@@ -2,6 +2,7 @@
 import XMonad
 import System.Exit (exitSuccess)
 import qualified XMonad.StackSet as W
+import qualified Data.Map as M
 
 -- Utilities
 import XMonad.Util.EZConfig (additionalKeysP, removeKeysP)
@@ -25,6 +26,7 @@ import XMonad.Hooks.FadeInactive (fadeInactiveLogHook)
 import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen)
 import XMonad.Actions.WindowBringer (gotoMenu)
 import XMonad.Actions.UpdatePointer (updatePointer)
+import XMonad.Actions.TopicSpace
 
 ------------------------------------------------------------------------
 -- General:
@@ -37,6 +39,24 @@ myWindowSwitcher = "rofi -show window -theme sidetab"
 myStatusBar = myConfigsDir ++ "/config/polybar/launch.sh"
 myWallpaper = "/home/ucizi/Pictures/simple-subtle-abstract-dark-minimalism-4k-u9.jpg"
 myModMask = mod4Mask
+
+------------------------------------------------------------------------
+-- Topics:
+myTopics :: [Topic]
+myTopics =
+  ["editor", "browser", "slack", "spotify", "extra"]
+
+myTopicConfig :: TopicConfig
+myTopicConfig = def
+  { defaultTopic = "editor"
+  , topicActions = M.fromList $
+    [ ("editor", spawn myEditor)
+    , ("browser", spawn myBrowser)
+    , ("slack", spawn "slack")
+    , ("spotify", spawn "spotify")
+    , ("extra", spawn myTerminal)
+    ]
+  }
 
 ------------------------------------------------------------------------
 -- Layouts:
@@ -91,12 +111,18 @@ myKeys =
   , ("M-x", spawn myLauncher)
   , ("M-w", gotoMenu)
   , ("M-<Esc>", io exitSuccess)
-  , ("M-c", spawn myBrowser)
-  , ("M-e", spawn myEditor)
+  , ("M-S-c", spawn myBrowser)
+  , ("M-S-e", spawn myEditor)
   , ("M-o", nextScreen)
   , ("M-S-o", shiftNextScreen)
   , ("M-S-q", kill)
   , ("M-C-l", spawn "gnome-screensaver-command --lock")
+  , ("M-e", switchTopic myTopicConfig "editor")
+  , ("M-c", switchTopic myTopicConfig "browser")
+  , ("M-s", switchTopic myTopicConfig "slack")
+  , ("M-S-s", switchTopic myTopicConfig "spotify")
+  , ("M-S-x", switchTopic myTopicConfig "extra")
+  , ("M-a", currentTopicAction myTopicConfig)
   ]
 
 ------------------------------------------------------------------------
@@ -129,6 +155,7 @@ myStartupHook = do
 -- Main:
 myConfig = def
   { terminal    = myTerminal
+  , workspaces = myTopics
   , modMask     = mod4Mask
   , borderWidth = 0
   , layoutHook = myLayoutHook
