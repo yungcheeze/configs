@@ -96,6 +96,7 @@ myKeys =
   , ("M-o", nextScreen)
   , ("M-S-o", shiftNextScreen)
   , ("M-S-q", kill)
+  , ("M-C-l", spawn "gnome-screensaver-command --lock")
   ]
 
 ------------------------------------------------------------------------
