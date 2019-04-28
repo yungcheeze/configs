@@ -85,14 +85,14 @@ myLogHook = fadeInactiveLogHook fadeAmount
 ------------------------------------------------------------------------
 -- Keys:
 myKeys =
-  [ ("M-S-r", spawn "xmonad --recompile; xmonad --restart")
+  [ ("M-C-r", spawn "xmonad --recompile; xmonad --restart")
   , ("M-<Return>", spawn myTerminal)
   , ("M-;", namedScratchpadAction myScratchPads "terminal")
   , ("M-x", spawn myLauncher)
   , ("M-w", gotoMenu)
   , ("M-<Esc>", io exitSuccess)
   , ("M-c", spawn myBrowser)
-  , ("M-S-e", spawn myEditor)
+  , ("M-e", spawn myEditor)
   , ("M-o", nextScreen)
   , ("M-S-o", shiftNextScreen)
   , ("M-S-q", kill)
