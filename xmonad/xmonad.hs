@@ -169,7 +169,6 @@ myStartupHook = do
   spawnOnce myStatusBar
   spawnOnce "redshift"
   spawnOnce "compton -b"
-  spawnOnce ("nitrogen --set-auto " ++ myWallpaper)
   spawnOnce "xbindkeys"
   spawnOnce "dropbox start"
   spawnOnce "workrave"
