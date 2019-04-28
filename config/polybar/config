@@ -51,7 +51,7 @@ font-1 = TerminessTTF Nerd Font Mono:size=8:weight=normal:antialias=false;0
 font-2 = monospace:size=8;0
 
 modules-left = bspwm i3
-modules-center = 
+modules-center =
 modules-right = xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date
 
 tray-position = right
@@ -242,20 +242,20 @@ format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
-ramp-capacity-1 =  
-ramp-capacity-2 =  
-ramp-capacity-3 =  
-ramp-capacity-4 =  
-ramp-capacity-5 =  
-ramp-capacity-6 =  
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
 ramp-capacity-7 = 
 ramp-capacity-8 = 
 ramp-capacity-9 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 =  
-animation-charging-1 =  
-animation-charging-2 =  
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -279,9 +279,9 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 =  
-ramp-1 =  
-ramp-2 =  
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [settings]
