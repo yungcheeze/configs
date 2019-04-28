@@ -33,6 +33,7 @@ myEditor = "emacsclient -c -a emacs"
 myConfigsDir = "/home/ucizi/_configs"
 myLauncher = myConfigsDir ++ "/scripts/dmenu_recency"
 myStatusBar = myConfigsDir ++ "/config/polybar/launch.sh"
+myWallpaper = "/home/ucizi/Pictures/wallpaper.jpg"
 myModMask = mod4Mask
 
 ------------------------------------------------------------------------
@@ -109,7 +110,7 @@ myStartupHook = do
   spawnOnce myStatusBar
   spawnOnce "redshift"
   spawnOnce "compton -b"
-  spawnOnce "nitrogen --restore"
+  spawnOnce ("nitrogen --set-auto " ++ myWallpaper)
 
 ------------------------------------------------------------------------
 -- Main:
