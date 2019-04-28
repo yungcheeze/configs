@@ -37,11 +37,9 @@ myModMask = mod4Mask
 
 ------------------------------------------------------------------------
 -- Layouts:
-myBorderWidth = 0
-
 mySpacing = 3
 
-myLayoutHook = avoidStruts . smartBorders $ myLayouts
+myLayoutHook = avoidStruts $ myLayouts
 
 myLayouts = myFull ||| myTwoPane
 
@@ -117,7 +115,7 @@ myStartupHook = do
 myConfig = def
   { terminal    = myTerminal
   , modMask     = mod4Mask
-  , borderWidth = myBorderWidth
+  , borderWidth = 0
   , layoutHook = myLayoutHook
   , startupHook = myStartupHook
   , manageHook = myManageHook <+> namedScratchpadManageHook myScratchPads
