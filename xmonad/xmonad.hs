@@ -18,22 +18,24 @@ import XMonad.Layout.Dishes
 import XMonad.Layout.TwoPane
 import XMonad.Util.NamedScratchpad ( NamedScratchpad(NS), customFloating, namedScratchpadManageHook, namedScratchpadAction)
 -- Hooks
-import XMonad.Hooks.ManageDocks (avoidStruts, docks)
+import XMonad.Hooks.ManageDocks (avoidStruts, manageDocks)
 import XMonad.Hooks.FadeInactive (fadeInactiveLogHook)
 
 -- Actions
 import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen)
 import XMonad.Actions.WindowBringer (gotoMenu)
+import XMonad.Actions.UpdatePointer (updatePointer)
 
 ------------------------------------------------------------------------
 -- General:
 myTerminal = "st -f 'MesloLGM Nerd Font Mono:size=11'"
-myBrowser = "chromium"
+myBrowser = "google-chrome"
 myEditor = "emacsclient -c -a emacs"
-myConfigsDir = "/home/ucizi/_configs"
 myLauncher = myConfigsDir ++ "/scripts/dmenu_recency"
+myConfigsDir = "/home/ucizi/configs"
+myWindowSwitcher = "rofi -show window -theme sidetab"
 myStatusBar = myConfigsDir ++ "/config/polybar/launch.sh"
-myWallpaper = "/home/ucizi/Pictures/wallpaper.jpg"
+myWallpaper = "/home/ucizi/Pictures/simple-subtle-abstract-dark-minimalism-4k-u9.jpg"
 myModMask = mod4Mask
 
 ------------------------------------------------------------------------
@@ -42,7 +44,7 @@ mySpacing = 3
 
 myLayoutHook = avoidStruts $ myLayouts
 
-myLayouts = myFull ||| myTwoPane
+myLayouts = myFull ||| myTile
 
 myTile = renamed [Replace "Tiled"] $ spacing mySpacing $ Tall 1 (3/100) (1/2)
 myFull = renamed [Replace "Full"] $ spacing mySpacing $ Full
@@ -72,7 +74,7 @@ myManageHook = composeAll
 ------------------------------------------------------------------------
 -- Log Hook:
 myLogHook = fadeInactiveLogHook fadeAmount
-    where fadeAmount = 0.9
+    where fadeAmount = 0.85
 ------------------------------------------------------------------------
 -- Keys:
 myKeys =
@@ -80,13 +82,13 @@ myKeys =
   , ("M-<Return>", spawn myTerminal)
   , ("M-;", namedScratchpadAction myScratchPads "terminal")
   , ("M-x", spawn myLauncher)
+  , ("M-w", gotoMenu)
   , ("M-<Esc>", io exitSuccess)
   , ("M-c", spawn myBrowser)
   , ("M-S-e", spawn myEditor)
   , ("M-o", nextScreen)
   , ("M-S-o", shiftNextScreen)
   , ("M-S-q", kill)
-  , ("M-w", gotoMenu)
   ]
 
 ------------------------------------------------------------------------
@@ -111,6 +113,9 @@ myStartupHook = do
   spawnOnce "redshift"
   spawnOnce "compton -b"
   spawnOnce ("nitrogen --set-auto " ++ myWallpaper)
+  spawnOnce "xbindkeys"
+  spawnOnce "dropbox start"
+  spawnOnce "workrave"
 
 ------------------------------------------------------------------------
 -- Main:
@@ -120,10 +125,10 @@ myConfig = def
   , borderWidth = 0
   , layoutHook = myLayoutHook
   , startupHook = myStartupHook
-  , manageHook = myManageHook <+> namedScratchpadManageHook myScratchPads
-  , logHook = myLogHook
+  , manageHook = myManageHook <+> namedScratchpadManageHook myScratchPads <+> manageDocks
+  , logHook = myLogHook >> updatePointer (0.5, 0.5) (0, 0)
   }
 
-main = xmonad $ docks myConfig
+main = xmonad $ myConfig
   `removeKeysP` removedKeys
   `additionalKeysP` myKeys
