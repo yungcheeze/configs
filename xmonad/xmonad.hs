@@ -38,7 +38,7 @@ myLauncher = myConfigsDir ++ "/scripts/dmenu_recency"
 myConfigsDir = "/home/ucizi/configs"
 myWindowSwitcher = "rofi -show window -theme sidetab"
 myStatusBar = myConfigsDir ++ "/config/polybar/launch.sh"
-myWallpaper = "/home/ucizi/Pictures/simple-subtle-abstract-dark-minimalism-4k-u9.jpg"
+myWallpaperCmd = "/home/ucizi/.fehbg"
 myModMask = mod4Mask
 
 ------------------------------------------------------------------------
@@ -172,6 +172,7 @@ myStartupHook = do
   spawnOnce "xbindkeys"
   spawnOnce "dropbox start"
   spawnOnce "workrave"
+  spawnOnce myWallpaperCmd
 
 ------------------------------------------------------------------------
 -- Main:
