@@ -22,6 +22,7 @@ import XMonad.Util.NamedScratchpad ( NamedScratchpad(NS), customFloating, namedS
 import XMonad.Hooks.ManageDocks (avoidStruts, manageDocks)
 import XMonad.Hooks.FadeInactive (fadeInactiveLogHook)
 import XMonad.Hooks.ManageHelpers (doCenterFloat)
+import XMonad.Hooks.SetWMName(setWMName)
 
 -- Actions
 import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen)
@@ -161,6 +162,7 @@ removedKeys =
 ------------------------------------------------------------------------
 -- Startup:
 myStartupHook = do
+  setWMName "LG3D" -- hack to make Java GUI apps work. Xmonad isn't on the whitelist (-_-)
   setupMyWSGroups
   spawnOnce myStatusBar
   spawnOnce "redshift"
