@@ -21,7 +21,6 @@ import XMonad.Util.NamedScratchpad ( NamedScratchpad(NS), customFloating, namedS
 -- Hooks
 import XMonad.Hooks.ManageDocks (avoidStruts, manageDocks)
 import XMonad.Hooks.FadeInactive (fadeInactiveLogHook)
-import XMonad.Hooks.ManageHelpers (doCenterFloat)
 import XMonad.Hooks.SetWMName(setWMName)
 
 -- Actions
@@ -113,7 +112,6 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
-    , className =? "workrave"       --> doCenterFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
