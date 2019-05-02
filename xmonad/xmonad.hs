@@ -2,6 +2,7 @@
 import XMonad
 import System.Exit (exitSuccess)
 import qualified XMonad.StackSet as W
+import qualified Data.Map as M
 
 -- Utilities
 import XMonad.Util.EZConfig (additionalKeysP, removeKeysP)
@@ -24,6 +25,8 @@ import XMonad.Hooks.FadeInactive (fadeInactiveLogHook)
 -- Actions
 import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen)
 import XMonad.Actions.WindowBringer (gotoMenu)
+import XMonad.Actions.TopicSpace
+import XMonad.Actions.DynamicWorkspaceGroups
 
 ------------------------------------------------------------------------
 -- General:
@@ -32,17 +35,46 @@ myBrowser = "chromium"
 myEditor = "emacsclient -c -a emacs"
 myConfigsDir = "/home/ucizi/_configs"
 myLauncher = myConfigsDir ++ "/scripts/dmenu_recency"
-myStatusBar = myConfigsDir ++ "/config/polybar/launch.sh"
-myWallpaper = "/home/ucizi/Pictures/wallpaper.jpg"
+myStatusBar = myConfigsDir ++ "/config/polybar/launch.sh &"
+myWallpaperCmd = "/home/ucizi/.fehbg"
 myModMask = mod4Mask
 
+------------------------------------------------------------------------
+-- Topics:
+myTopics :: [Topic]
+myTopics =
+  ["editor", "browser", "slack", "spotify", "extra"]
+
+myTopicConfig :: TopicConfig
+myTopicConfig = def
+  { defaultTopic = "editor"
+  , topicActions = M.fromList $
+    [ ("editor", spawn myEditor)
+    , ("browser", spawn myBrowser)
+    , ("slack", spawn "slack")
+    , ("spotify", spawn "spotify")
+    , ("extra", spawn myTerminal)
+    ]
+  }
+
+goToEditorWorkspace = do
+  switchTopic myTopicConfig "editor"
+
+goToBrowserWorkspace = do
+  switchTopic myTopicConfig "browser"
+
+goToSlackWorkspace = do
+  switchTopic myTopicConfig "slack"
+
+goToSpotifyWorkspace = do
+  switchTopic myTopicConfig "spotify"
 ------------------------------------------------------------------------
 -- Layouts:
 mySpacing = 3
 
 myLayoutHook = avoidStruts $ myLayouts
 
-myLayouts = myFull ||| myTwoPane
+myLayouts = myFull ||| myTile
 
 myTile = renamed [Replace "Tiled"] $ spacing mySpacing $ Tall 1 (3/100) (1/2)
 myFull = renamed [Replace "Full"] $ spacing mySpacing $ Full
@@ -76,17 +108,24 @@ myLogHook = fadeInactiveLogHook fadeAmount
 ------------------------------------------------------------------------
 -- Keys:
 myKeys =
-  [ ("M-S-r", spawn "xmonad --recompile; xmonad --restart")
+  [ ("M-C-r", spawn "xmonad --recompile; xmonad --restart")
   , ("M-<Return>", spawn myTerminal)
   , ("M-;", namedScratchpadAction myScratchPads "terminal")
   , ("M-x", spawn myLauncher)
-  , ("M-<Esc>", io exitSuccess)
-  , ("M-c", spawn myBrowser)
+  , ("M-w", gotoMenu)
+  , ("C-M1-<Delete>", io exitSuccess)
+  , ("M-S-c", spawn myBrowser)
   , ("M-S-e", spawn myEditor)
   , ("M-o", nextScreen)
   , ("M-S-o", shiftNextScreen)
   , ("M-S-q", kill)
-  , ("M-w", gotoMenu)
+  , ("M-C-l", spawn "i3lock-fancy-rapid 5 1")
+  , ("M-e", goToEditorWorkspace)
+  , ("M-c", goToBrowserWorkspace)
+  -- , ("M-s", goToSlackWorkspace)
+  , ("M-S-s", goToSpotifyWorkspace)
+  , ("M-S-x", switchTopic myTopicConfig "extra")
+  , ("M-a", currentTopicAction myTopicConfig)
   ]
 
 ------------------------------------------------------------------------
@@ -108,14 +147,17 @@ removedKeys =
 -- Startup:
 myStartupHook = do
   spawnOnce myStatusBar
-  spawnOnce "redshift"
-  spawnOnce "compton -b"
-  spawnOnce ("nitrogen --set-auto " ++ myWallpaper)
+  spawnOnce "redshift &"
+  spawnOnce "compton -b &"
+  spawnOnce "xbindkeys"
+  spawnOnce "dropbox start"
+  spawnOnce myWallpaperCmd
 
 ------------------------------------------------------------------------
 -- Main:
 myConfig = def
   { terminal    = myTerminal
+  , workspaces = myTopics
   , modMask     = mod4Mask
   , borderWidth = 0
   , layoutHook = myLayoutHook
