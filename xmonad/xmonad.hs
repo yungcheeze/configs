@@ -127,7 +127,7 @@ myKeys =
   , ("M-;", namedScratchpadAction myScratchPads "terminal")
   , ("M-x", spawn myLauncher)
   , ("M-w", gotoMenu)
-  , ("M-<Esc>", io exitSuccess)
+  , ("C-M1-<Delete>", io exitSuccess)
   , ("M-S-c", spawn myBrowser)
   , ("M-S-e", spawn myEditor)
   , ("M-o", nextScreen)
