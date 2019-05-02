@@ -38,7 +38,7 @@ myEditor = "emacsclient -c -a emacs"
 myLauncher = myConfigsDir ++ "/scripts/dmenu_recency"
 myConfigsDir = "/home/ucizi/configs"
 myWindowSwitcher = "rofi -show window -theme sidetab"
-myStatusBar = myConfigsDir ++ "/config/polybar/launch.sh"
+myStatusBar = myConfigsDir ++ "/config/polybar/launch.sh &"
 myWallpaperCmd = "/home/ucizi/.fehbg"
 myModMask = mod4Mask
 
@@ -163,11 +163,11 @@ myStartupHook = do
   setWMName "LG3D" -- hack to make Java GUI apps work. Xmonad isn't on the whitelist (-_-)
   setupMyWSGroups
   spawnOnce myStatusBar
-  spawnOnce "redshift"
-  spawnOnce "compton -b"
+  spawnOnce "redshift &"
+  spawnOnce "compton -b &"
   spawnOnce "xbindkeys"
   spawnOnce "dropbox start"
-  spawnOnce "workrave"
+  spawnOnce "workrave &"
   spawnOnce myWallpaperCmd
 
 ------------------------------------------------------------------------
