@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pipenv install --three --dev pytest ptvsd importmagic epc pylint flake8
