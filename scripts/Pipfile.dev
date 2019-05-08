@@ -4,5 +4,11 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pytest = "==4.2.1"
-ptvsd = ">=4.2"
+pytest = "*"
+ptvsd = "*"
+importmagic = "*"
+epc = "*"
+"flake8" = "*"
+autoflake = "*"
+python-language-server = {extras = ["all"]}
+ipython = "*"
