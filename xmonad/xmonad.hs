@@ -133,7 +133,7 @@ myKeys =
   , ("M-o", nextScreen)
   , ("M-S-o", shiftNextScreen)
   , ("M-S-q", kill)
-  , ("M-C-l", spawn "gnome-screensaver-command --lock")
+  , ("M-C-l", spawn "i3lock -c 000000")
   , ("M-e", goToEditorWorkspace)
   , ("M-c", goToBrowserWorkspace)
   , ("M-s", goToSlackWorkspace)
