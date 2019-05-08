@@ -131,7 +131,7 @@ myKeys =
   , ("M-S-c", spawn myBrowser)
   , ("M-S-e", spawn myEditor)
   , ("M-o", nextScreen)
-  , ("M-S-o", shiftNextScreen)
+  , ("M-S-o", shiftNextScreen >> nextScreen)
   , ("M-S-q", kill)
   , ("M-C-l", spawn "i3lock -c 000000")
   , ("M-e", goToEditorWorkspace)
