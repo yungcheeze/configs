@@ -12,3 +12,7 @@ Host github.com
      User git
      HostName github.com
      IdentityFile ~/.ssh/github_yungcheeze_rsa
+
+Host baby-beast
+     User ucizi
+     HostName 10.207.168.198
