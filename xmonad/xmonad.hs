@@ -118,7 +118,7 @@ myManageHook = composeAll
 ------------------------------------------------------------------------
 -- Log Hook:
 myLogHook = fadeInactiveLogHook fadeAmount
-    where fadeAmount = 0.85
+    where fadeAmount = 0.90
 ------------------------------------------------------------------------
 -- Keys:
 myKeys =
