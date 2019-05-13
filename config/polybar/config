@@ -52,7 +52,7 @@ font-2 = monospace:size=8;0
 
 modules-left = bspwm i3
 modules-center =
-modules-right = xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date
+modules-right = alsa pulseaudio eth memory cpu date xkeyboard
 
 tray-position = right
 tray-padding = 2
