@@ -122,3 +122,24 @@ fi
 
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
+
+export WORKON_HOME=~/.virtualenvs
+export PROJECT_HOME=~/Documents/VENV_PROJECTS
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+
+export PIPENV_VENV_IN_PROJECT=1
+
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
+
+export EDITOR="emacsclient -t"
+export ALTERNATE_EDITOR="emacs"
+export VISUAL="emacsclient -c"         # $VISUAL opens in GUI with non-daemon as alternate
+alias e="emacsclient -c"                      # used to be "emacs -nw"
+alias et="emacsclient -t"                      # used to be "emacs -nw"
+
+eval "$(fasd --init posix-hook posix-alias)"
+alias fcd="fasd_cd -id"
