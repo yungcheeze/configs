@@ -40,6 +40,7 @@ myConfigsDir = "/home/ucizi/configs"
 myWindowSwitcher = "rofi -show window -theme sidetab"
 myStatusBar = myConfigsDir ++ "/config/polybar/launch.sh"
 myWallpaperCmd = "/home/ucizi/.fehbg"
+myStartupApps = myConfigsDir ++ "/xmonad/startup.sh"
 myModMask = mod4Mask
 
 ------------------------------------------------------------------------
@@ -162,13 +163,12 @@ removedKeys =
 myStartupHook = do
   setWMName "LG3D" -- hack to make Java GUI apps work. Xmonad isn't on the whitelist (-_-)
   setupMyWSGroups
-  spawnOnce "xbindkeys"
+  spawnOnce "xbindkeys &"
   spawnOnce "redshift &"
   spawnOnce "compton -b &"
-  spawnOnce "workrave &"
-  spawnOnce myWallpaperCmd
+  spawnOnce (myWallpaperCmd ++ "& ")
   spawnOnce (myStatusBar ++ " &")
-  spawnOnce "dropbox start"
+  spawn myStartupApps
 
 ------------------------------------------------------------------------
 -- Main:
