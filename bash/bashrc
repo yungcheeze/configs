@@ -141,3 +141,9 @@ alias et="emacsclient -t"                      # used to be "emacs -nw"
 
 eval "$(fasd --init posix-hook posix-alias)"
 alias fcd="fasd_cd -id"
+
+[ -n "$PS1" ] && sh ~/configs/vimspectr/shell/vimspectrgrey-dark
+
+if [ "$TERM" != "linux" ]; then
+    source ~/configs/pureline/pureline ~/configs/pureline.conf
+fi
