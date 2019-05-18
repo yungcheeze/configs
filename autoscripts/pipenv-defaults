@@ -1,3 +1,4 @@
 #!/bin/bash
 
 pipenv install --python 3.5.2 --dev pytest ptvsd importmagic epc autoflake flake8 'python-language-server[all]' ipython
+pipenv uninstall pylint
