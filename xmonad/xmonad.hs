@@ -29,6 +29,7 @@ import XMonad.Actions.WindowBringer (bringMenu, gotoMenu)
 import XMonad.Actions.UpdatePointer (updatePointer)
 import XMonad.Actions.TopicSpace
 import XMonad.Actions.DynamicWorkspaceGroups
+import XMonad.Actions.Commands (workspaceCommands, runCommand)
 
 ------------------------------------------------------------------------
 -- General:
@@ -127,8 +128,9 @@ myKeys =
   , ("M-<Return>", spawn myTerminal)
   , ("M-;", namedScratchpadAction myScratchPads "terminal")
   , ("M-x", spawn myLauncher)
-  , ("M-w", gotoMenu)
-  , ("M-S-w", bringMenu)
+  , ("M-'", gotoMenu)
+  , ("M-S-'", bringMenu)
+  , ("M-#", workspaceCommands >>= runCommand)
   , ("C-M1-<Delete>", io exitSuccess)
   , ("M-S-c", spawn myBrowser)
   , ("M-S-e", spawn myEditor)
