@@ -135,7 +135,7 @@ fi
 
 export EDITOR="emacsclient -t"
 export ALTERNATE_EDITOR="emacs"
-export VISUAL="emacsclient -c"         # $VISUAL opens in GUI with non-daemon as alternate
+export VISUAL="emacsclient -t"         # $VISUAL opens in GUI with non-daemon as alternate
 alias e="emacsclient -c"                      # used to be "emacs -nw"
 alias et="emacsclient -t"                      # used to be "emacs -nw"
 
