@@ -25,7 +25,7 @@ import XMonad.Hooks.SetWMName(setWMName)
 
 -- Actions
 import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen)
-import XMonad.Actions.WindowBringer (gotoMenu)
+import XMonad.Actions.WindowBringer (bringMenu, gotoMenu)
 import XMonad.Actions.UpdatePointer (updatePointer)
 import XMonad.Actions.TopicSpace
 import XMonad.Actions.DynamicWorkspaceGroups
@@ -128,6 +128,7 @@ myKeys =
   , ("M-;", namedScratchpadAction myScratchPads "terminal")
   , ("M-x", spawn myLauncher)
   , ("M-w", gotoMenu)
+  , ("M-S-w", bringMenu)
   , ("C-M1-<Delete>", io exitSuccess)
   , ("M-S-c", spawn myBrowser)
   , ("M-S-e", spawn myEditor)
