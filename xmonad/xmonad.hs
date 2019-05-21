@@ -168,9 +168,10 @@ myStartupHook = do
   spawnOnce "xbindkeys &"
   spawnOnce "redshift &"
   spawnOnce "compton -b &"
+  spawnOnce "workrave &"
+  spawnOnce "dropbox start"
   spawnOnce (myWallpaperCmd ++ "& ")
   spawnOnce (myStatusBar ++ " &")
-  spawn myStartupApps
 
 ------------------------------------------------------------------------
 -- Main:
