@@ -27,3 +27,11 @@ __pycache__/
 
 #ctags
 tags
+
+#emacs
+*~undo-tree~*
+.dir-locals.el
+.ccls-cache
+
+# run this command to activate
+# git config --global core.excludesfile ~/configs/gitignore_global
