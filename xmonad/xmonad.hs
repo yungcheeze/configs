@@ -69,20 +69,22 @@ setupMyWSGroups = do
 
 goToEditorWorkspace = do
   viewWSGroup "editor+browser"
-  nextScreen
-  switchTopic myTopicConfig "editor"
+  warpToScreen 0 (1/2) (1/2)
 
 goToBrowserWorkspace = do
   viewWSGroup "editor+browser"
   switchTopic myTopicConfig "browser"
+  warpToScreen 1 (1/2) (1/2)
 
 goToSlackWorkspace = do
   viewWSGroup "slack_on_secondary"
   switchTopic myTopicConfig "slack"
+  warpToScreen 1 (1/2) (1/2)
 
 goToSpotifyWorkspace = do
   viewWSGroup "spotify_on_secondary"
   switchTopic myTopicConfig "spotify"
+  warpToScreen 1 (1/2) (1/2)
 ------------------------------------------------------------------------
 -- Layouts:
 mySpacing = 3
