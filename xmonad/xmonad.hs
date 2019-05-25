@@ -24,11 +24,12 @@ import XMonad.Hooks.FadeInactive (fadeInactiveLogHook)
 import XMonad.Hooks.SetWMName(setWMName)
 
 -- Actions
-import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen)
+import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen, screenBy)
 import XMonad.Actions.WindowBringer (bringMenu, gotoMenu)
 import XMonad.Actions.TopicSpace
 import XMonad.Actions.DynamicWorkspaceGroups
 import XMonad.Actions.Commands (workspaceCommands, runCommand)
+import XMonad.Actions.Warp (warpToScreen)
 
 ------------------------------------------------------------------------
 -- General:
@@ -121,6 +122,12 @@ myManageHook = composeAll
 myLogHook = fadeInactiveLogHook fadeAmount
     where fadeAmount = 0.90
 ------------------------------------------------------------------------
+
+focusAndWarpToNextScreen = do
+  sc <- screenBy 1
+  warpToScreen sc (1/2) (1/2)
+  nextScreen
+
 -- Keys:
 myKeys =
   [ ("M-C-r", spawn "xmonad --recompile; xmonad --restart")
@@ -133,8 +140,8 @@ myKeys =
   , ("C-M1-<Delete>", io exitSuccess)
   , ("M-S-c", spawn myBrowser)
   , ("M-S-e", spawn myEditor)
-  , ("M-o", nextScreen)
-  , ("M-S-o", shiftNextScreen >> nextScreen)
+  , ("M-o", focusAndWarpToNextScreen)
+  , ("M-S-o", shiftNextScreen >> focusAndWarpToNextScreen)
   , ("M-S-q", kill)
   , ("M-C-l", spawn "i3lock -c 000000")
   , ("M-e", goToEditorWorkspace)
