@@ -69,6 +69,7 @@ setupMyWSGroups = do
 
 goToEditorWorkspace = do
   viewWSGroup "editor+browser"
+  nextScreen
   warpToScreen 0 (1/2) (1/2)
 
 goToBrowserWorkspace = do
