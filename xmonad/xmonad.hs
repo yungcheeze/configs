@@ -26,7 +26,6 @@ import XMonad.Hooks.SetWMName(setWMName)
 -- Actions
 import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen)
 import XMonad.Actions.WindowBringer (bringMenu, gotoMenu)
-import XMonad.Actions.UpdatePointer (updatePointer)
 import XMonad.Actions.TopicSpace
 import XMonad.Actions.DynamicWorkspaceGroups
 import XMonad.Actions.Commands (workspaceCommands, runCommand)
@@ -183,7 +182,7 @@ myConfig = def
   , layoutHook = myLayoutHook
   , startupHook = myStartupHook
   , manageHook = myManageHook <+> namedScratchpadManageHook myScratchPads <+> manageDocks
-  , logHook = myLogHook >> updatePointer (0.5, 0.5) (0, 0)
+  , logHook = myLogHook
   }
 
 main = xmonad $ myConfig
