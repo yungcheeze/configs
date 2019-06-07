@@ -121,6 +121,8 @@ fi
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
+alias to-clip="xclip -selection c"
+
 export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=~/Documents/VENV_PROJECTS
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
