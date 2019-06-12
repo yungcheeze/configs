@@ -3,3 +3,6 @@
 #+BEGIN_SRC sh
 setxkbmap -option ctrl:nocaps
 #+END_SRC
+* Disabled all gnome keybindings
+<2019-06-11 Tue>
+https://askubuntu.com/questions/461701/disable-all-unity-keyboard-shortcuts-using-the-command-line
