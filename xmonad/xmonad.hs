@@ -176,12 +176,13 @@ myStartupHook = do
   setWMName "LG3D" -- hack to make Java GUI apps work. Xmonad isn't on the whitelist (-_-)
   setupMyWSGroups
   spawnOnce "xbindkeys &"
+  spawnOnce "setxkbmap -option ctrl:nocaps"
   spawnOnce "redshift &"
   spawnOnce "compton -b &"
-  spawnOnce "workrave &"
   spawnOnce "dropbox start"
   spawnOnce (myWallpaperCmd ++ "& ")
   spawnOnce (myStatusBar ++ " &")
+  spawnOnce "workrave &"
 
 ------------------------------------------------------------------------
 -- Main:
