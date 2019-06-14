@@ -119,7 +119,9 @@ myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    , resource  =? "kdesktop"       --> doIgnore
+    , title     =? "Rest break"     --> doIgnore
+    ]
 
 ------------------------------------------------------------------------
 -- Log Hook:
