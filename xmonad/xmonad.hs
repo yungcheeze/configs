@@ -121,6 +121,7 @@ myManageHook = composeAll
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
     , title     =? "Rest break"     --> doIgnore
+    , title     =? "Micro-break"     --> doIgnore
     ]
 
 ------------------------------------------------------------------------
