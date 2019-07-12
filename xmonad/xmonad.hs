@@ -155,7 +155,7 @@ myKeys =
   , ("M-c", goToBrowserWorkspace)
   , ("M-s", goToSlackWorkspace)
   , ("M-S-s", goToSpotifyWorkspace)
-  , ("M-S-x", switchTopic myTopicConfig "extra")
+  , ("M-1", switchTopic myTopicConfig "extra")
   , ("M-a", currentTopicAction myTopicConfig)
   ]
 
