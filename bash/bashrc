@@ -140,6 +140,9 @@ export ALTERNATE_EDITOR="emacs"
 export VISUAL="emacsclient -t"         # $VISUAL opens in GUI with non-daemon as alternate
 alias e="emacsclient -c"                      # used to be "emacs -nw"
 alias et="emacsclient -t"                      # used to be "emacs -nw"
+ev() {
+    emacs "$1" -nw --quick --eval '(setq buffer-read-only t)'
+}
 
 # configure less (https://www.topbug.net/blog/2016/09/27/make-gnu-less-more-powerful/)
 export LESS='--ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
