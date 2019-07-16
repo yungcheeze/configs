@@ -19,7 +19,7 @@ import XMonad.Layout.Dishes
 import XMonad.Layout.TwoPane
 import XMonad.Util.NamedScratchpad ( NamedScratchpad(NS), customFloating, namedScratchpadManageHook, namedScratchpadAction)
 -- Hooks
-import XMonad.Hooks.ManageDocks (avoidStruts, manageDocks)
+import XMonad.Hooks.ManageDocks (avoidStruts, ToggleStruts(..), manageDocks)
 import XMonad.Hooks.FadeInactive (fadeInactiveLogHook)
 import XMonad.Hooks.SetWMName(setWMName)
 
@@ -157,6 +157,7 @@ myKeys =
   , ("M-S-s", goToSpotifyWorkspace)
   , ("M-1", switchTopic myTopicConfig "extra")
   , ("M-a", currentTopicAction myTopicConfig)
+  , ("M-S-6", sendMessage $ ToggleStruts) -- M-^
   ]
 
 ------------------------------------------------------------------------
