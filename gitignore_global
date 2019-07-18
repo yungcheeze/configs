@@ -33,6 +33,7 @@ tags
 *~undo-tree~*
 .dir-locals.el
 .ccls-cache
+cmake-ide-build
 
 # run this command to activate
 # git config --global core.excludesfile ~/configs/gitignore_global
