@@ -34,7 +34,7 @@ import XMonad.Actions.Warp (warpToScreen)
 ------------------------------------------------------------------------
 -- General:
 myTerminal = "terminator"
-myBrowser = "google-chrome"
+myBrowser = "chromium-browser"
 myEditor = "emacsclient -c -a emacs"
 myLauncher = myConfigsDir ++ "/scripts/dmenu_recency"
 myConfigsDir = "/home/ucizi/configs"
