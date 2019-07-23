@@ -34,6 +34,7 @@ tags
 .dir-locals.el
 .ccls-cache
 cmake-ide-build
+compile_commands.json
 
 # run this command to activate
 # git config --global core.excludesfile ~/configs/gitignore_global
