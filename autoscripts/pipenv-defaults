@@ -1,3 +1,4 @@
 #!/bin/bash
 
-pipenv install --python 3.5.2 --dev flake8 autoflake pytest ptvsd ipython importmagic epc
+pipenv install --python 3.5.2 --dev pytest
+pipenv run pip install flake8 autoflake ptvsd ipython importmagic epc
