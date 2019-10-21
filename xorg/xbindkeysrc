@@ -36,11 +36,11 @@
 
 
 # Increase volume
-"pactl -- set-sink-volume 0 +1%"
+"pactl -- set-sink-volume 3 +1%"
    XF86AudioRaiseVolume
 
 # Decrease volume
-"pactl -- set-sink-volume 0 -1%"
+"pactl -- set-sink-volume 3 -1%"
    XF86AudioLowerVolume
 
 # decrease brightness
@@ -52,7 +52,7 @@
    XF86MonBrightnessUp
 
 #toggle mute
-"pactl set-sink-mute 0 toggle"
+"pactl set-sink-mute 3 toggle"
     m:0x0 + c:121
     XF86AudioMute 
 
