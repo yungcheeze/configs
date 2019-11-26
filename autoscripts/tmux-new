@@ -8,3 +8,4 @@ else
 fi
 
 tmux new -s $SESSION_NAME -d
+tmux switch -t $SESSION_NAME
