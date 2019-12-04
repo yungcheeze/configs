@@ -2,4 +2,4 @@
 
 JSON_FILE=$1
 
-jq -C . $JSON_FILE | less -r
+jq -C . "$JSON_FILE" | less -r
