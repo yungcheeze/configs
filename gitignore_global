@@ -26,6 +26,11 @@ __pycache__/
 #IntelliJ
 .idea/
 
+#Eclipse
+.classpath
+.settings/
+.project
+
 #ctags
 tags
 
