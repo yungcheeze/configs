@@ -56,11 +56,16 @@ myTopicConfig = def
   , topicActions = M.fromList $
     [ ("editor", spawn myEditor)
     , ("browser", spawn myBrowser)
-    , ("slack", spawn "slack")
+    , ("slack", slackTopicAction)
     , ("spotify", spawn "spotify")
     , ("extra", spawn myTerminal)
     ]
   }
+
+slackTopicAction :: MonadIO m => m ()
+slackTopicAction = do
+  spawn "slack"
+  spawn "google-chrome teams.microsoft.com"
 
 setupMyWSGroups = do
   addRawWSGroup "editor+browser" [(0, "editor"), (1, "browser")]
