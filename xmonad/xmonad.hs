@@ -163,7 +163,15 @@ myKeys =
   , ("M-1", switchTopic myTopicConfig "extra")
   , ("M-a", currentTopicAction myTopicConfig)
   , ("M-S-6", sendMessage $ ToggleStruts) -- M-^
+  , ("M-j", windows W.focusUp)
+  , ("M-k", windows W.focusDown)
+  , ("M-h", sendMessage Shrink)
+  , ("M-l", sendMessage Expand)
+  , ("M-,", sendMessage (IncMasterN 1))
+  , ("M-.", sendMessage (IncMasterN (-1)))
+  , ("M-m", windows W.focusMaster)
   , ("M-S-m", windows W.shiftMaster)
+  , ("M-t", withFocused $ windows . W.sink) -- tile floating window
   ]
 
 ------------------------------------------------------------------------
