@@ -38,10 +38,8 @@ myBrowser = "chromium-browser"
 myEditor = "emacsclient -c -a emacs"
 myLauncher = myConfigsDir ++ "/scripts/dmenu_recency"
 myConfigsDir = "/home/ucizi/configs"
-myWindowSwitcher = "rofi -show window -theme sidetab"
 myStatusBar = myConfigsDir ++ "/config/polybar/launch.sh"
 myWallpaperCmd = "/home/ucizi/.fehbg"
-myStartupApps = myConfigsDir ++ "/xmonad/startup.sh"
 myModMask = mod4Mask
 
 ------------------------------------------------------------------------
