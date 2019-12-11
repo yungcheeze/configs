@@ -163,6 +163,7 @@ myKeys =
   , ("M-1", switchTopic myTopicConfig "extra")
   , ("M-a", currentTopicAction myTopicConfig)
   , ("M-S-6", sendMessage $ ToggleStruts) -- M-^
+  , ("M-S-m", windows W.shiftMaster)
   ]
 
 ------------------------------------------------------------------------
