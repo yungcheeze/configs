@@ -127,6 +127,7 @@ myManageHook = composeAll
     , resource  =? "kdesktop"       --> doIgnore
     , title     =? "Rest break"     --> doIgnore
     , title     =? "Micro-break"     --> doIgnore
+    , title     =? "Workrave"       --> doIgnore
     ]
 
 ------------------------------------------------------------------------
