@@ -90,3 +90,5 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='7'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='3'
 
 source  ~/powerlevel9k/powerlevel9k.zsh-theme
+
+source /home/ucizi/.config/broot/launcher/bash/br

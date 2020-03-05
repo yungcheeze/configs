@@ -33,7 +33,7 @@ import XMonad.Actions.Warp (warpToScreen)
 
 ------------------------------------------------------------------------
 -- General:
-myTerminal = "terminator"
+myTerminal = "gnome-terminal"
 myBrowser = "chromium-browser"
 myEditor = "emacsclient -c -a emacs"
 myLauncher = myConfigsDir ++ "/scripts/dmenu_recency"
@@ -107,8 +107,8 @@ myTwoPane = renamed [Replace "TwoPane"] $ spacing mySpacing $ TwoPane (3/100) (1
 myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 ]
     where
-    spawnTerm  = myTerminal ++  " -c scratchpad"
-    findTerm   = resource =? "scratchpad"
+    spawnTerm  = myTerminal ++  " --class=scratchpad"
+    findTerm   = stringProperty "_GTK_APPLICATION_ID" =? "com.canonical.Terminal.scratchpad"
     manageTerm =  customFloating $ W.RationalRect l t w h
                  where
                  h = 0.9
