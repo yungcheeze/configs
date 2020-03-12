@@ -63,7 +63,7 @@ myTopicConfig = def
 slackTopicAction :: MonadIO m => m ()
 slackTopicAction = do
   spawn "slack"
-  spawn "google-chrome teams.microsoft.com"
+  spawn "teams"
 
 setupMyWSGroups = do
   addRawWSGroup "editor+browser" [(0, "editor"), (1, "browser")]
@@ -126,6 +126,7 @@ myManageHook = composeAll
     , title     =? "Rest break"     --> doIgnore
     , title     =? "Micro-break"     --> doIgnore
     , title     =? "Workrave"       --> doIgnore
+    , stringProperty "WM_NAME" =? "Microsoft Teams Notification" --> composeAll [doFloat, doIgnore]
     ]
 
 ------------------------------------------------------------------------
