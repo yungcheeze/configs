@@ -59,9 +59,21 @@ cmd symlink %{{
     lf -remote 'send load'
     lf -remote 'send clear'
 }}
+
+cmd paste_overwrite %{{
+    load=$(lf -remote 'load')
+    mode=$(echo "$load" | sed -n '1p')
+    list=$(echo "$load" | sed '1d')
+    if [ $mode = 'copy' ]; then
+        cp $list .
+    fi
+    lf -remote 'send load'
+    lf -remote 'send clear'
+}}
 map p
 map pp paste
 map pl symlink
+map po paste_overwrite
 
 map +ur &chmod u+r $fx;  lf -remote "send $id reload"
 map -ur &chmod u-r $fx;  lf -remote "send $id reload"
